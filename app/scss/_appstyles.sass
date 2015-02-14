@@ -1,0 +1,25 @@
+/* all app scss styles here */
+
+@import "compass/css3"
+@import "compass/utilities"
+
+
+ul
+  background: red
+  border: 2px solid blue
+
+  li
+    color: green
+    padding: 10px
+
+
+    &.cos
+      text-transform: uppercase
+
+.cos
+  font-size: 40px
+  background: blue
+
+@media #{$small-only}
+  .cos
+    background: black

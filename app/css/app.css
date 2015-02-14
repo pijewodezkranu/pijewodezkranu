@@ -8095,5 +8095,27 @@ th.hide-for-touch {
   }
 }
 /* all app scss styles here */
+ul {
+  background: red;
+  border: 2px solid blue;
+}
+ul li {
+  color: green;
+  padding: 10px;
+}
+ul li.cos {
+  text-transform: uppercase;
+}
+
+.cos {
+  font-size: 40px;
+  background: blue;
+}
+
+@media only screen and (max-width: 40em) {
+  .cos {
+    background: black;
+  }
+}
 
 /*# sourceMappingURL=app.css.map */
