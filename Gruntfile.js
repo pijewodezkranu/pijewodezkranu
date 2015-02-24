@@ -158,6 +158,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		uncss: {
+		  dist: {
+		    files: {
+		      'dist/css/app.css': ['app/index.html']
+		    }
+		  }
+		},
+
 		wiredep: {
 			target: {
 				src: [
@@ -172,15 +180,16 @@ module.exports = function(grunt) {
 		}
 
 	});
-
+	grunt.loadNpmTasks('grunt-uncss');
 	grunt.registerTask('compile-jade', ['jade']);
 	grunt.registerTask('compile-sass', ['sass']);
 	grunt.registerTask('bower-install', ['wiredep']);
+
 
 	grunt.registerTask('default', ['compile-jade', 'compile-sass', 'bower-install', 'connect:app', 'watch']);
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
 
-	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'uncss:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };
