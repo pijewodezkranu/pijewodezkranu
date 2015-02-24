@@ -1,0 +1,171 @@
+=delayTransition($childsNumber, $interval)
+  @for $i from 1 through $childsNumber
+    &:nth-child(#{$i})
+      transition-delay: 0.2s + $i * $interval
+
+
+
+.main-nav
+  display: none
+
+
+.mobile-nav__trigger
+  display: block
+  border: none
+  width: 55px
+  height: 50px
+  cursor: pointer
+  z-index: 1000
+  position: fixed
+  right: 0
+  top: 0
+
+  span
+    position: absolute
+    top: 23px
+    left: 15px
+    right: 15px
+    display: block
+    height: 3px
+    background: $secondary-color
+    transition: transform .3s ease, top .1s ease
+
+    &:before,
+    &:after
+      content: ""
+      position: absolute
+      display: block
+      left: 0
+      width: 100%
+      background: $secondary-color
+      height: 100%
+      transition: transform .3s ease, top .2s ease
+      transform-origin: 50% 50%
+
+    &:before
+      top: -7px
+
+    &:after
+      top: 7px
+
+  &:hover
+
+    span:before
+      top: -9px
+
+    span:after
+      top: 9px
+
+.mobile-nav--show
+
+  .mobile-nav__trigger
+
+    span
+      background: transparent
+
+    span:before, span:after
+
+      top: 0
+
+    span:before
+      transform: rotate3d(0,0,1,45deg)
+
+    span:after
+      transform: rotate3d(0,0,1,-45deg)
+
+  .mobile-nav
+    transform: translateX(0)
+
+    li
+      opacity: 1
+      transform: translateX(0)
+
+
+
+.mobile-nav
+  list-style: none
+  margin: 0
+  padding: 0 0 0 30px
+  position: fixed
+  right: 0
+  z-index: 800
+  background: #fff
+  min-width: 250px
+  width: 70%
+  height: 100%
+  transition: transform .15s ease-in-out
+  transform: translateX(100%) translateZ(0)
+
+  ul
+    padding: 50px 0 0
+    margin: 0
+    height: 100%
+
+  li
+    display: block
+    vertical-align: top
+    line-height: 48px
+    opacity: 0
+    transform: translateX(-20px) translateZ(0)
+    transition: opacity .3s ease, transform .2s ease
+
+    +delayTransition(6, 0.025)
+
+
+  li.mf-nav__option--has-dropdown
+    max-height: 50px
+
+  a
+    display: block
+    font-size: 16px
+    line-height: 50px
+    height: 100%
+    padding: 0 $column-gutter / 2
+    text-decoration: none
+    letter-spacing: 1px
+    color: #333
+    cursor: pointer
+    text-transform: uppercase
+    font-weight: 800
+    border-left: 4px solid transparent
+    transition: border-color .3s ease
+
+    &:hover, &:focus
+      border-left: 4px solid $secondary-color
+      outline: none
+
+  .mf-nav__element--active
+
+    a
+      border-left: 4px solid $primary-color
+
+  .mf-nav__separator
+    border-bottom: 1px solid #eee
+    width: 100%
+
+
+@media #{$medium-up}
+
+  .mobile-nav, .mobile-nav__trigger
+    display: none
+
+  .main-nav
+    display: block
+    list-style: none
+    text-align: right
+
+    li
+      display: inline-block
+      margin-left: rem-calc(20px)
+
+      a
+        display: block
+        padding: rem-calc(8px 12px)
+        border: 1px solid $button-border-color
+        transition: border-color .1s ease
+        color: $secondary-color
+        font-size: rem-calc(13px)
+
+        &:hover, &:focus
+          outline: none
+          border-color: $primary-color

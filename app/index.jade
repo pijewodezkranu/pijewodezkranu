@@ -4,15 +4,35 @@ doctype html
 html(class="no-js", lang="en")
   include header
   body
-    div.row
-        h1 Tu będzie menu kiedyś
+    .row
+      .small-8.medium-3.columns
+        | logo
+      .small-4.medium-9.columns
+        //- na div niżej należy dodać .mobile-nav--show
+        div
+          div.mobile-nav__trigger
+            span
+          ul.mobile-nav
+            li: a(href="#") Link 1
+            li: a(href="#") Link 2
+            li: a(href="#") Link 3
+            li: a(href="#") Link 4
+            li: a(href="#") Link 5
+            li: a(href="#") Link 6
 
-    div.row
-        .small-10.columns.small-centered
-          h1.question.dash
-            | Czy w polskich miastach można pić wodę z kranu bez przegotowania?
-            .blue Tak!
-          p.blue Jakość wody wodociągowej określa Polskie prawo oraz regulacje Unii Europejskiej. Warto korzystać z wody z kranu, w porównaniu z wodą butelkowaną jest to znacznie wygodniejsze, tańsze i proekologiczne!
+        ul.main-nav
+          li: a(href="#") Link 1
+          li: a(href="#") Link 2
+          li: a(href="#") Link 3
+          li: a(href="#") Link 4
+          li: a(href="#") Link 5
+          li: a(href="#") Link 6
+
+    .row
+      .small-12.medium-10.columns.small-centered
+        h1.question.dash Czy w polskich miastach można pić wodę z kranu bez przegotowania?
+        h1.blue Tak!
+        p.blue Jakość wody wodociągowej określa Polskie prawo oraz regulacje Unii Europejskiej. Warto korzystać z wody z kranu, w porównaniu z wodą butelkowaną jest to znacznie wygodniejsze, tańsze i proekologiczne!
 
         //- ul
         //-   +listbutton('jakis tekst')

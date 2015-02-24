@@ -1,47 +1,30 @@
 /* all app scss styles here */
 
-@import "compass/css3"
-@import "compass/utilities"
+@import compass/css3
+@import compass/utilities
+@import modules/nav
+
+
+$button-border-color: #D9E7F1
+
+body
+  padding: rem-calc(40px 0)
 
 h1
-  font-size: 36px
   font-weight: 400
-  
+
   &.question
     color: black
-    font-family: "Helvetica Neue DeskInterface"
-    
+
     &.dash:before
       content: "—"
-      font-size: 41px
+      font-size: rem-calc(41px)
       position: absolute
       left: -30px
-  
+
 .blue
-  color: #2989cc
-
-p
-  font-family: ".Helvetica Neue DeskInterface"
-  font-size: 18px
-  font-weight: 400
-  line-height: 25px
-  
-ul
-  background: white
-  border: 2px solid blue
-
-  li
-    color: green
-    padding: 10px
+  color: $primary-color
 
 
-    &.cos
-      text-transform: uppercase
+@media #{$large-up}
 
-.cos
-  font-size: 40px
-  background: blue
-
-@media #{$small-only}
-  .cos
-    background: black
