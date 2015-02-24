@@ -3,26 +3,39 @@
 module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt);
-
+    require('time-grunt')(grunt);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		app: 'app',
 		dist: 'dist',
 
+		// sass: {
+		// 	dist: {
+		// 		options: {
+		// 			style: 'expanded', // expanded or nested or compact or compressed
+		// 			loadPath: '<%= app %>/bower_components/foundation/scss',
+		// 			compass: true,
+		// 			quiet: true
+		// 		},
+		// 		files: {
+		// 			'<%= app %>/css/app.css': '<%= app %>/scss/app.scss'
+		// 		}
+		// 	}
+		// },
+
+
 		sass: {
-			dist: {
-				options: {
-					style: 'expanded', // expanded or nested or compact or compressed
-					loadPath: '<%= app %>/bower_components/foundation/scss',
-					compass: true,
-					quiet: true
-				},
-				files: {
-					'<%= app %>/css/app.css': '<%= app %>/scss/app.scss'
-				}
-			}
-		},
+        options: {
+            style: 'expanded',
+            includePaths: ['<%= app %>/bower_components/foundation/scss']
+        },
+        dist: {
+            files: {
+                '<%= app %>/css/app.css': '<%= app %>/scss/app.scss'
+            }
+        }
+    },
 
 
 		jade: {
