@@ -8096,17 +8096,30 @@ th.hide-for-touch {
   }
 }
 /* all app scss styles here */
+h1 {
+  font-size: 36px;
+  font-weight: 400;
+}
 h1.question {
   color: black;
   font-family: "Helvetica Neue DeskInterface";
-  font-size: 36px;
-  font-weight: 400;
 }
 h1.question.dash:before {
   content: "—";
   font-size: 41px;
   position: absolute;
   left: -30px;
+}
+
+.blue {
+  color: #2989cc;
+}
+
+p {
+  font-family: ".Helvetica Neue DeskInterface";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
 }
 
 ul {
