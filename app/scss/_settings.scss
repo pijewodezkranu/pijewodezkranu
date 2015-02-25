@@ -104,7 +104,7 @@ $font-weight-normal: 300;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
-// $silver      : #EFEFEF;
+$silver      : #E8E0D8;
 // $smoke       : #EEEEEE;
 // $gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
@@ -129,7 +129,7 @@ $secondary-color: #525252;
 
 // We use these to control various global styles
 // $body-bg: $white;
-// $body-font-color: $jet;
+$body-font-color: #414141;
 $body-font-family: 'Lato', sans-serif;
 $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -287,9 +287,9 @@ $paragraph-line-height: 1.4;
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
 // $blockquote-padding: rem-calc(9 20 0 19);
 // $blockquote-border: 1px solid $gainsboro;
-// $blockquote-cite-font-size: rem-calc(13);
+$blockquote-cite-font-size: rem-calc(16);
 // $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
-// $blockquote-cite-link-color: $blockquote-cite-font-color;
+$blockquote-cite-link-color: #000;
 
 // Acronym styles
 // $acronym-underline: 1px dotted $gainsboro;

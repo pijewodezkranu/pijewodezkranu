@@ -8,6 +8,10 @@ $button-border-color: #D9E7F1
 body
   padding: rem-calc(40px 0)
 
+.large-paragraph
+  font-size: rem-calc(22px)
+  line-height: rem-calc(30px)
+
 h1
   font-weight: 400
 
@@ -19,10 +23,122 @@ h1
       font-size: rem-calc(41px)
       position: absolute
       left: -30px
+      top: -5px
 
 .blue
   color: $primary-color
+  font-weight: 700
 
+blockquote.quote, blockquote.small-quote
+  font-style: italic
+  font-weight: 300
+  font-size: rem-calc(18px)
+  line-height: rem-calc(25px)
+  border-left: none
+  padding-left: 50px
+  position: relative
+
+  cite
+    font-weight: 700
+    margin-left: 50%
+    line-height: rem-calc(19px)
+
+    .cite-location
+      display: block
+      font-weight: 300
+
+blockquote.quote:before
+  content: "“"
+  font-size: rem-calc(96px)
+  color: #636363
+  position: absolute
+  left: 0px
+  top: 30px
+
+.refferals
+  margin-top: 100px
+
+.refferal-marta, .refferal-maciej
+  position: relative
+
+  blockquote
+    padding: 0
+
+    cite
+      margin-top: 15px
+      margin-left: 0
+
+.refferal-marta
+
+  padding-bottom: 10px
+
+  &:before
+    content: url('../images/marta.png')
+    position: absolute
+    left: -70px
+    bottom: 0
+    z-index: -1
+
+  blockquote.small-quote
+    padding-left: 30%
+
+.refferal-maciej
+
+  margin-bottom: 50px
+
+  &:before
+    content: url('../images/maciek.png')
+    position: absolute
+    right: -70px
+    top: -170px
+    z-index: -1
+
+  blockquote.small-quote
+    padding-right: 30%
+
+iframe
+  background: none
+
+.map
+  position: relative
+  margin-top: -10px
+  margin-bottom: 20px
+
+.loading
+  z-index: -1
+  top: 0
+  left: 0
+  right: 0
+  position: absolute
+  margin: 230px auto 0
+  font-size: rem-calc(20px)
+  color: $secondary-color
+
+.with-icon
+  background: none
+  border-radius: 11px
+  color: $body-font-color
+  font-weight: 400
+
+  &:hover, &:focus
+    background: none
+    color: darken($body-font-color, 15%)
+
+  &:before
+    display: block
+    margin-bottom: 10px
+    text-align: center
+
+  &.clipboard
+    border: 1px solid $silver
+
+    &:before
+      content: url('../images/clipboard.png')
+
+  &.location
+    border: 1px solid $primary-color
+    &:before
+      content: url('../images/location.png')
 
 @media #{$large-up}
 
