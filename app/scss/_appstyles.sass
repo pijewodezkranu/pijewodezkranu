@@ -73,12 +73,38 @@ blockquote.quote:before
         margin-top: 15px
         margin-left: 0
 
+@media #{$small-only}
+
+  .refferal-maciej
+    margin-top: 50px
+
+    &:after
+      content: url('../images/maciek.png')
+      position: relative
+      top: -170px
+      z-index: -1
+
+    blockquote.small-quote
+      padding-right: 30%
+
+  .refferal-marta
+    top: -120px
+    padding-bottom: 10px
+
+    &:after
+      content: url('../images/marta.png')
+      position: relative
+      top: -120px
+      left: -70px
+      z-index: -1
+
+    blockquote.small-quote
+      padding-left: 30%
+
 @media #{$medium-up}
 
   .refferals
     margin-top: 100px
-
-  
 
   .refferal-marta
 
