@@ -1,6 +1,7 @@
 /* all app scss styles here */
 
 @import modules/nav
+@import modules/buttons
 
 
 $button-border-color: #D9E7F1
@@ -28,6 +29,8 @@ h1
 .blue
   color: $primary-color
   font-weight: 700
+
+
 
 blockquote.quote, blockquote.small-quote
   font-style: italic
@@ -96,6 +99,20 @@ blockquote.quote:before
   blockquote.small-quote
     padding-right: 30%
 
+.how-to-help
+  margin-left: -10px
+  font-weight: 700
+  font-size: rem-calc(22px)
+
+  li
+    padding-left: 10px
+
+  p
+    font-size: rem-calc(18px)
+
+  strong
+    font-size: rem-calc(22px)
+
 iframe
   background: none
 
@@ -114,7 +131,7 @@ iframe
   font-size: rem-calc(20px)
   color: $secondary-color
 
-.with-icon
+blockquote.with-icon
   background: none
   border-radius: 11px
   color: $body-font-color
@@ -139,6 +156,71 @@ iframe
     border: 1px solid $primary-color
     &:before
       content: url('../images/location.png')
+
+
+.button.with-icon
+  padding: 10px 18px 11px
+
+  span
+    display: inline-block
+    vertical-align: middle
+    text-align: left
+    margin-left: 16px
+    line-height: rem-calc(20px)
+    font-size: rem-calc(18px)
+
+  i
+    display: inline-block
+    vertical-align: middle
+
+  i.envelope:before
+    content: url('../images/envelope.png')
+
+  i.social-facebook:before
+    content: url('../images/social-facebook.png')
+
+
+.bottles
+  background: url('../images/bottles.png')
+
+.button.with-icon--vertical
+  background: none
+  overflow: hidden
+  color: $body-font-color
+  transition: color .2s ease
+  border: 1px solid $primary-color
+  padding: 12px 24px
+
+  i
+    display: block
+    margin-bottom: 10px
+
+    &:before
+      stroke: red
+      content: url('../images/heart.svg')
+
+  &:before
+    content: ""
+    position: absolute
+    margin: auto
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: $primary-color
+    border-radius: 200px
+    height: 0
+    width: 0
+    display: block
+    z-index: -1
+    transition: all .2s ease-in-out
+
+  &:hover
+    color: #fff
+
+    &:before
+      height: 300px
+      width: 300px
 
 @media #{$large-up}
 

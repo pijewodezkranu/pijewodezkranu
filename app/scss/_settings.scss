@@ -212,7 +212,7 @@ $header-font-weight: 400;
 // We use these to control header font sizes
 $h1-font-size: rem-calc(36);
 // $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
+$h3-font-size: rem-calc(22);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
@@ -430,7 +430,7 @@ $blockquote-cite-link-color: #000;
 // We use these to build padding for buttons.
 // $button-tny: rem-calc(10);
 // $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
+$button-med: rem-calc(14);
 // $button-lrg: rem-calc(18);
 
 // We use this to control the display property.
@@ -469,7 +469,7 @@ $blockquote-cite-link-color: #000;
 // $info-button-border-color: $info-button-bg-hover;
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
+$button-radius: rem-calc(11px);
 // $button-round: $global-rounded;
 
 // We use this to set default opacity and cursor for disabled buttons.
