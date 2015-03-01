@@ -4,42 +4,21 @@ doctype html
 html(class="no-js", lang="en")
   include header
   body
-    .row
-      .small-8.medium-3.columns
-        | logo
-      .small-4.medium-9.columns
-        //- na div niżej należy dodać .mobile-nav--show
-        div
-          div.mobile-nav__trigger
-            span
-          ul.mobile-nav
-            li: a(href="#") Link 1
-            li: a(href="#") Link 2
-            li: a(href="#") Link 3
-            li: a(href="#") Link 4
-            li: a(href="#") Link 5
-            li: a(href="#") Link 6
+    include includes/menu
 
-        ul.main-nav
-          li: a(href="#") Link 1
-          li: a(href="#") Link 2
-          li: a(href="#") Link 3
-          li: a(href="#") Link 4
-          li: a(href="#") Link 5
-          li: a(href="#") Link 6
+    row.content
+      include includes/firstPage
 
-    //- include includes/firstPage
+      include includes/secondPage
 
-    //- include includes/secondPage
+      include includes/thridPage
 
-    //- include includes/thridPage
+      include includes/fourthPage
 
-    //- include includes/fourthPage
-
-    include includes/fifthPage
-    
-    include includes/sixthPage
-    
-    include includes/seventhPage
+      include includes/fifthPage
+      
+      include includes/sixthPage
+      
+      include includes/seventhPage
 
     include footer
