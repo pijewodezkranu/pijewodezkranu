@@ -126,6 +126,45 @@ blockquote.with-icon
     i.social-facebook:before
       content: url('../images/social-facebook.png')
 
+.button.with-icon--vertical
+    background: none
+    overflow: hidden
+    color: $body-font-color
+    transition: color .2s ease
+    border: 1px solid $primary-color
+    padding: 12px 24px
+
+    i
+      display: block
+      margin-bottom: 10px
+
+      &:before
+        stroke: red
+        content: url('../images/heart.svg')
+
+    &:before
+      content: ""
+      position: absolute
+      margin: auto
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      background: $primary-color
+      border-radius: 200px
+      height: 0
+      width: 0
+      display: block
+      z-index: -1
+      transition: all .2s ease-in-out
+
+    &:hover
+      color: #fff
+
+      &:before
+        height: 300px
+        width: 300px
+
 // Page 3
 .map
   position: relative
@@ -141,6 +180,26 @@ blockquote.with-icon
     margin: 230px auto 0
     font-size: rem-calc(20px)
     color: $secondary-color
+
+iframe
+  background: none
+
+.how-to-help
+    margin-left: -10px
+    font-weight: 700
+    font-size: rem-calc(22px)
+
+    li
+      padding-left: 10px
+
+    p
+      font-size: rem-calc(18px)
+
+    strong
+      font-size: rem-calc(22px)
+
+.bottles
+    background: url('../images/bottles.png')
 
 @media #{$small-only}
 
@@ -202,80 +261,6 @@ blockquote.with-icon
 
     blockquote.small-quote
       padding-right: 30%
-
-  .how-to-help
-    margin-left: -10px
-    font-weight: 700
-    font-size: rem-calc(22px)
-
-    li
-      padding-left: 10px
-
-    p
-      font-size: rem-calc(18px)
-
-    strong
-      font-size: rem-calc(22px)
-
-  iframe
-    background: none
-
-  // .map
-  //   position: relative
-  //   margin-top: -10px
-  //   margin-bottom: 20px
-
-  // .loading
-  //   z-index: -1
-  //   top: 0
-  //   left: 0
-  //   right: 0
-  //   position: absolute
-  //   margin: 230px auto 0
-  //   font-size: rem-calc(20px)
-  //   color: $secondary-color
-
-  .bottles
-    background: url('../images/bottles.png')
-
-  .button.with-icon--vertical
-    background: none
-    overflow: hidden
-    color: $body-font-color
-    transition: color .2s ease
-    border: 1px solid $primary-color
-    padding: 12px 24px
-
-    i
-      display: block
-      margin-bottom: 10px
-
-      &:before
-        stroke: red
-        content: url('../images/heart.svg')
-
-    &:before
-      content: ""
-      position: absolute
-      margin: auto
-      top: 0
-      bottom: 0
-      left: 0
-      right: 0
-      background: $primary-color
-      border-radius: 200px
-      height: 0
-      width: 0
-      display: block
-      z-index: -1
-      transition: all .2s ease-in-out
-
-    &:hover
-      color: #fff
-
-      &:before
-        height: 300px
-        width: 300px
 
 @media #{$large-up}
 
