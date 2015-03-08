@@ -247,6 +247,29 @@ iframe
   .szymon-boniecki:before
     content: url('../images/szymon-boniecki.png')
 
+// Page 7
+.media
+  color: black
+  font-family: Lato
+  font-size: rem-calc(18px)
+  line-height: rem-calc(35px)
+
+  a
+    @extend .media
+    font-weight: 300
+    text-decoration: underline
+
+    &:hover, &:focus
+      font-weight: 400
+
+
+  .header
+    font-weight: 700
+
+  .city
+    font-weight: 300
+    font-style: italic
+
 @media #{$small-only}
 
   .refferal-maciej
