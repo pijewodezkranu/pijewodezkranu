@@ -124,65 +124,68 @@ blockquote.quote:before
   left: 0px
   top: 30px
 
-button.with-icon
-    background: none
-    border-radius: 11px
-    color: $body-font-color
-    font-weight: 400
+button.with-icon.hollow,
+.button.with-icon.hollow
 
-    &:hover, &:focus
-      background: none
-      color: darken($body-font-color, 15%)
+  background: none
+  border-radius: 11px
+  color: $body-font-color
+  font-weight: 400
+
+  &:hover, &:focus
+    background: none
+    color: darken($body-font-color, 15%)
+
+  &:before
+    display: block
+    margin-bottom: 10px
+    text-align: center
+
+  &.clipboard
+    border: 1px solid $silver
+    width: 230px
 
     &:before
-      display: block
-      margin-bottom: 10px
-      text-align: center
+      content: url('../images/clipboard.png')
 
-    &.clipboard
-      border: 1px solid $silver
-      width: 230px
+  &.location
+    border: 1px solid $primary-color
+    width: 230px
 
-      &:before
-        content: url('../images/clipboard.png')
-
-    &.location
-      border: 1px solid $primary-color
-      width: 230px
-
-      &:before
-        content: url('../images/location.png')
+    &:before
+      content: url('../images/location.png')
 
 .refferal-marta, .refferal-maciej
-    position: relative
+  position: relative
 
-    blockquote
-      padding: 0
+  blockquote
+    padding: 0
 
-      cite
-        margin-top: 15px
-        margin-left: 0
+    cite
+      margin-top: 15px
+      margin-left: 0
 
-.button.with-icon
-    padding: 10px 18px 11px
+.button.with-icon,
+button.with-icon
+  padding: 10px 18px 11px
 
-    span
-      display: inline-block
-      vertical-align: middle
-      text-align: left
-      margin-left: 16px
-      line-height: rem-calc(20px)
-      font-size: rem-calc(18px)
+  span
+    display: inline-block
+    vertical-align: middle
+    text-align: left
+    margin-left: 16px
+    line-height: rem-calc(20px)
+    font-size: rem-calc(18px)
 
-    i
-      display: inline-block
-      vertical-align: middle
+  i
+    display: inline-block
+    vertical-align: middle
 
-    i.envelope:before
-      content: url('../images/envelope.png')
+  i.envelope:before
+    content: url('../images/envelope.png')
 
-    i.social-facebook:before
-      content: url('../images/social-facebook.png')
+  i.social-facebook:before
+    content: url('../images/social-facebook.png')
 
 .button.with-icon--vertical
   background: none
