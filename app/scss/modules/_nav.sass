@@ -153,17 +153,21 @@
     display: block
     list-style: none
     text-align: right
-    margin-top: rem-calc(40px)
+    margin-top: rem-calc(33px)
 
 
     li
-      max-width: rem-calc(111px)
       display: inline-block
-      margin-left: rem-calc(20px)
+      margin-left: rem-calc(10px)
+
+      &:first-child
+        margin-left: 0
 
       a
         display: block
+        line-height: rem-calc(26px)
         padding: rem-calc(8px 12px)
+        vertical-align: middle
         border: 1px solid #E6F0F6
         transition: border-color .1s ease
         color: $secondary-color
@@ -172,8 +176,15 @@
         &:hover, &:focus
           outline: none
           border-color: $primary-color
-  
+
+
         &.smallDrop
-          padding: rem-calc(8px 0)
-        &.smallDrop:before
-          content: url('../images/small-drop.png')
+          line-height: rem-calc(24px)
+
+          &:before
+            vertical-align: middle
+            display: inline-block
+            line-height: rem-calc(24px)
+            height: 24px
+            padding-right: 5px
+            content: url('../images/small-drop.png')
