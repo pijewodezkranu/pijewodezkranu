@@ -161,7 +161,7 @@ module.exports = function(grunt) {
 		uncss: {
 		  dist: {
 		    files: {
-		      'dist/css/app.css': ['app/index.html']
+		      'app/css/app.css': ['app/index.html']
 		    }
 		  }
 		},
@@ -177,10 +177,22 @@ module.exports = function(grunt) {
 					'foundation'
 				]
 			}
+		},
+		cssmin: {
+		  target: {
+		    files: [{
+		      expand: true,
+		      cwd: 'dist/css',
+		      src: ['*.css', '!*.min.css'],
+		      dest: 'dist/css',
+		      ext: '.min.css'
+		    }]
+		  }
 		}
 
 	});
 	grunt.loadNpmTasks('grunt-uncss');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.registerTask('compile-jade', ['jade']);
 	grunt.registerTask('compile-sass', ['sass']);
 	grunt.registerTask('bower-install', ['wiredep']);
@@ -190,6 +202,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
 
-	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'uncss:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'uncss:dist', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };

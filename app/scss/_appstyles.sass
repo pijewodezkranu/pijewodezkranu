@@ -1,7 +1,6 @@
 /* all app scss styles here */
 
 @import modules/nav
-// @import modules/buttons
 
 
 $button-border-color: #D9E7F1
@@ -15,7 +14,8 @@ body
   font-style: italic
 
 .content
-  top: rem-calc(200px)
+  padding-top: rem-calc(180px)
+  display: block
 
 // Menu
 .menu
@@ -25,6 +25,8 @@ body
   z-index: 1000
   position: fixed
   top: 0
+  left: 0
+  right: 0
 
   .logo
     margin-top: rem-calc(5px)
@@ -50,10 +52,10 @@ body
   line-height: rem-calc(30px)
 
 h1
-  font-weight: 400
 
   &.question
     color: black
+    font-style: italic
 
     &.dash:before
       content: "—"
@@ -63,8 +65,8 @@ h1
       top: -5px
 
 .bold
-  font-weight: 700
-  
+  font-weight: 900
+
 .blue
   color: $primary-color
 
@@ -87,15 +89,44 @@ blockquote.quote, blockquote.small-quote
   border-left: none
   padding-left: 50px
   position: relative
+  margin-bottom: 35px
 
   cite
     font-weight: 700
-    margin-left: 50%
+    margin-left: 0
+    margin-top: 15px
     line-height: rem-calc(19px)
+
+    @media #{$medium-up}
+      margin-left: 0
 
     .cite-location
       display: block
       font-weight: 300
+
+.myths
+  .quote
+
+    @media #{$medium-up}
+      padding-left: 0
+      padding-right: 60px
+
+      &:before
+        left: -40px
+
+  .end
+    @media #{$medium-up}
+      padding-right: 0px
+
+
+.myth
+  padding-left: 50px
+  margin-bottom: 0
+
+  @media #{$medium-up}
+    padding-right: 40px
+    padding-left: 0
+
 
 blockquote.quote:before
   content: "“"
@@ -105,101 +136,124 @@ blockquote.quote:before
   left: 0px
   top: 30px
 
-blockquote.with-icon
-    background: none
-    border-radius: 11px
-    color: $body-font-color
-    font-weight: 400
+button.with-icon.hollow,
+.button.with-icon.hollow
 
-    &:hover, &:focus
-      background: none
-      color: darken($body-font-color, 15%)
+  background: none
+  border-radius: 11px
+  color: $body-font-color
+  font-weight: 400
+
+  &:hover, &:focus
+    background: none
+    color: darken($body-font-color, 15%)
+
+  &:before
+    display: block
+    margin-bottom: 10px
+    text-align: center
+
+  &.clipboard
+    border: 1px solid $silver
+    width: 230px
 
     &:before
-      display: block
-      margin-bottom: 10px
-      text-align: center
+      content: url('../images/clipboard.png')
 
-    &.clipboard
-      border: 1px solid $silver
+  &.location
+    border: 1px solid $primary-color
+    width: 230px
 
-      &:before
-        content: url('../images/clipboard.png')
-
-    &.location
-      border: 1px solid $primary-color
-      &:before
-        content: url('../images/location.png')
+    &:before
+      content: url('../images/location.png')
 
 .refferal-marta, .refferal-maciej
-    position: relative
+  position: relative
 
-    blockquote
-      padding: 0
+  blockquote
+    padding: 0
 
-      cite
-        margin-top: 15px
-        margin-left: 0
+    cite
+      margin-top: 15px
+      margin-left: 0
 
-.button.with-icon
-    padding: 10px 18px 11px
+.button.with-icon,
+button.with-icon
+  padding: 10px 18px 11px
 
-    span
-      display: inline-block
-      vertical-align: middle
-      text-align: left
-      margin-left: 16px
-      line-height: rem-calc(20px)
-      font-size: rem-calc(18px)
+  span
+    display: inline-block
+    vertical-align: middle
+    text-align: left
+    margin-left: 16px
+    line-height: rem-calc(20px)
+    font-size: rem-calc(18px)
 
-    i
-      display: inline-block
-      vertical-align: middle
+  i
+    display: inline-block
+    vertical-align: middle
 
-    i.envelope:before
-      content: url('../images/envelope.png')
+  i.envelope:before
+    content: url('../images/envelope.png')
 
-    i.social-facebook:before
-      content: url('../images/social-facebook.png')
+  i.social-facebook:before
+    content: url('../images/social-facebook.png')
 
 .button.with-icon--vertical
-    background: none
-    overflow: hidden
-    color: $body-font-color
-    transition: color .2s ease
-    border: 1px solid $primary-color
-    padding: 12px 24px
+  background: none
+  overflow: hidden
+  color: $body-font-color
+  transition: color .2s ease
+  border: 1px solid $primary-color
+  padding: 12px 54px
+  z-index: 19
+  position: relative
+  margin-top: 250px
+  display: block
 
-    i
-      display: block
-      margin-bottom: 10px
+  @media #{$medium-up}
+    margin-top: 0
+    display: inline-block
 
-      &:before
-        stroke: red
-        content: url('../images/heart.svg')
+  i
+    display: block
+    margin-bottom: 10px
 
     &:before
       content: ""
-      position: absolute
-      margin: auto
-      top: 0
-      bottom: 0
-      left: 0
-      right: 0
-      background: $primary-color
-      border-radius: 200px
-      height: 0
-      width: 0
+      background: url('../images/heart.png')
+      background-size: contain
+      background-position: center center
+      margin: 0 auto
+      width: 56px
+      height: 51px
       display: block
-      z-index: -1
-      transition: all .2s ease-in-out
 
-    &:hover
-      color: #fff
+  span
+    display: block
 
-      &:before
-        height: 300px
-        width: 300px
+  &:before
+    content: ""
+    position: absolute
+    margin: auto
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: $primary-color
+    border-radius: 100px
+    height: 0
+    width: 0
+    display: block
+    z-index: -1
+    transition: all .2s ease-in-out
+
+  &:hover
+    color: #fff
+
+    &:before
+      height: 400px
+      width: 400px
 
 // Page 3
 .map
@@ -221,43 +275,59 @@ iframe
   background: none
 
 .how-to-help
-    margin-left: -10px
-    font-weight: 700
+  margin-left: -10px
+  font-weight: 700
+  font-size: rem-calc(22px)
+
+  li
+    padding-left: 10px
+
+  p
+    font-size: rem-calc(18px)
+
+  strong
     font-size: rem-calc(22px)
 
-    li
-      padding-left: 10px
-
-    p
-      font-size: rem-calc(18px)
-
-    strong
-      font-size: rem-calc(22px)
-
 .bottles
-    background: url('../images/bottles.png')
+  background: url('../images/bottles.png')
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: top left
+  min-height: 450px
+
+.bottles-cta
+  margin-top: 150px
+
 
 // Page 5
 .partners
   .stanislaw-czachorowski:before
-      content: url('../images/stanislaw-czachorowski.png')
+    display: block
+    content: url('../images/stanislaw-czachorowski.png')
   .marek-biziuk:before
-      content: url('../images/marek-biziuk.png')
+    display: block
+    content: url('../images/marek-biziuk.png')
   .lukasz-balwicki:before
-      content: url('../images/stanislaw-czachorowski.png')
+    display: block
+    content: url('../images/stanislaw-czachorowski.png')
   .equa:before
-      content: url('../images/equa.png')
+    display: block
+    content: url('../images/equa.png')
   .kierunek-wodkan:before
-      content: url('../images/kierunek_wodkan_pion.png')
+    display: block
+    content: url('../images/kierunek_wodkan_pion.png')
   .ulica-ekologiczna:before
-      content: url('../images/ulica-ekologiczna-logo-2.png')
+    display: block
+    content: url('../images/ulica-ekologiczna-logo-2.png')
 
 // Page 6
 .about
   .michal-kozurno:before
     content: url('../images/michal-kozurno.png')
+    margin: 0 auto
   .szymon-boniecki:before
     content: url('../images/szymon-boniecki.png')
+    margin: 0 auto
 
 // Page 7
 .media
