@@ -1,44 +1,46 @@
-// build:js js/vendor/libraries.min.js
-// bower:js
-script(src='bower_components/jquery/dist/jquery.js')
-script(src='bower_components/fastclick/lib/fastclick.js')
-script(src='bower_components/jquery.cookie/jquery.cookie.js')
-// endbower
-// endbuild
-// build:js js/vendor/foundation.min.js
-//- script(src="bower_components/foundation/js/foundation/foundation.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.abide.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.accordion.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.alert.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.clearing.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.dropdown.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.equalizer.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.interchange.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.joyride.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.magellan.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.offcanvas.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.orbit.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.reveal.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.slider.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.tab.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.tooltip.js")
-//- script(src="bower_components/foundation/js/foundation/foundation.topbar.js")
-// endbuild
-// build:js js/app.min.js
-//- script(src="js/app.js")
-// endbuild
-.row
-	.small-8.medium-4.large-3.small-centered.columns
-		button.button.radius.with-icon
-			//- TODO grafiki do podmiany z sketcha
-			i.social-facebook
-		button.button.radius.with-icon
-			i.social-facebook
-		button.button.radius.with-icon
-			i.social-facebook
 
-.row
-	.small-12.columns
-		p Akcję Piję wodę z kranu prowadzi fundacja Czyściutko (KRS 0000536142)
-			br
-			| © 2015 Fundacja Czyściutko
+.row.social-buttons
+	.column.text-center
+		a.button.radius.with-icon.fixed-size(href="#")
+			i.social-facebook
+		a.button.radius.with-icon.fixed-size(href="#")
+			i.social-instagram
+		a.button.radius.with-icon.fixed-size(href="#")
+			i.envelope
+
+.waves-footer
+	.row
+		.small-12.columns.text-center
+			p Akcję Piję wodę z kranu prowadzi fundacja Czyściutko (KRS 0000536142)
+			p © 2015 Fundacja Czyściutko
+	.waste
+
+script.
+	var body, navToggled, toggleNav, trigger;
+
+	navToggled = false;
+
+	body = document.getElementsByTagName('body')[0];
+
+	mobileNavElements = document.getElementsByClassName('mobile-nav__element');
+
+	trigger = document.getElementById('mobile-nav__trigger');
+
+	toggleNav = function() {
+	  navToggled = !navToggled;
+	  if (navToggled === true) {
+	    return body.className = 'mobile-nav--show';
+	  } else {
+	    return body.className = '';
+	  }
+	};
+
+
+	trigger.onclick = toggleNav;
+
+	for (_i = 0, _len = mobileNavElements.length; _i < _len; _i++) {
+	  navLink = mobileNavElements[_i];
+	  navLink.onclick = toggleNav
+	}
+
+

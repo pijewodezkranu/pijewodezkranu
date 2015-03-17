@@ -1,29 +1,27 @@
 .menu
   .row
-    .small-8.medium-5.large-3.columns
-      .row
-        .small-4.columns
-          .logo
-        .small-8.columns
-          .title.black Piję wodę z kranu
-    .small-4.medium-7.large-9.columns
-      //- na div niżej należy dodać .mobile-nav--show
+    .small-8.medium-1.large-3.columns
+      a.logo(href="http://pijewodezkranu.org")
+        img(src="images/logo.png")
+        .title.black.hide-for-medium Piję wodę z kranu
+    .small-4.medium-11.large-9.columns
       div
         div.mobile-nav__trigger
-          span
+          span#mobile-nav__trigger
         ul.mobile-nav
-          li: a(href="#") Tu dostaniesz wodę z kranu
-          li: a(href="#") Prawdy i mity
-          li: a(href="#") Wesprzyj
-          li: a(href="#") Partnerzy
-          li: a(href="#") O nas
-          li: a(href="#") Prasa
+          li: a.mobile-nav__element(href="#tudostanieszwodezkranu")
+            span Tu dostaniesz wodę z kranu
+          li: a.mobile-nav__element(href="#prawdyimity") Prawdy i mity
+          li: a.mobile-nav__element(href="#wesprzyj") Wesprzyj
+          li: a.mobile-nav__element(href="#partnerzy") Partnerzy
+          li: a.mobile-nav__element(href="#onas") O nas
+          li: a.mobile-nav__element(href="#prasa") Prasa
 
       ul.main-nav
         //- TODO do poprawienia kropla
-        li: a(href="#" class="smallDrop") Tu dostaniesz wodę z kranu
-        li: a(href="#") Prawdy i mity
-        li: a(href="#") Wesprzyj
-        li: a(href="#") Partnerzy
-        li: a(href="#") O nas
-        li: a(href="#") Prasa
+        li: a(href="#tudostanieszwodezkranu" class="smallDrop") Tu dostaniesz wodę z kranu
+        li: a(href="#prawdyimity") Prawdy i mity
+        li: a(href="#wesprzyj") Wesprzyj
+        li: a(href="#partnerzy") Partnerzy
+        li: a(href="#onas") O nas
+        li: a(href="#prasa") Prasa

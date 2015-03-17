@@ -15,7 +15,7 @@
   width: 55px
   height: 50px
   cursor: pointer
-  z-index: 1000
+  z-index: 3000
   position: fixed
   right: 0
   top: 0
@@ -27,7 +27,7 @@
     right: 15px
     display: block
     height: 3px
-    background: $secondary-color
+    background: $primary-color
     transition: transform .3s ease, top .1s ease
 
     &:before,
@@ -37,7 +37,7 @@
       display: block
       left: 0
       width: 100%
-      background: $secondary-color
+      background: $primary-color
       height: 100%
       transition: transform .3s ease, top .2s ease
       transform-origin: 50% 50%
@@ -61,7 +61,7 @@
   .mobile-nav__trigger
 
     span
-      background: transparent
+      background: none !important
 
     span:before, span:after
 
@@ -81,20 +81,20 @@
       transform: translateX(0)
 
 
-
 .mobile-nav
   list-style: none
   margin: 0
-  padding: 0 0 0 30px
+  padding: 50px 0 0 30px
   position: fixed
   right: 0
-  z-index: 800
+  z-index: 2000
   background: #fff
   min-width: 250px
   width: 70%
   height: 100%
   transition: transform .15s ease-in-out
   transform: translateX(100%) translateZ(0)
+  box-shadow: -1px 0 2px rgba(#000, .2)
 
   ul
     padding: 50px 0 0
@@ -104,16 +104,13 @@
   li
     display: block
     vertical-align: top
-    line-height: 48px
+    min-height: 50px
     opacity: 0
     transform: translateX(-20px) translateZ(0)
     transition: opacity .3s ease, transform .2s ease
 
     +delayTransition(6, 0.025)
 
-
-  li.mf-nav__option--has-dropdown
-    max-height: 50px
 
   a
     display: block
@@ -129,6 +126,11 @@
     font-weight: 800
     border-left: 4px solid transparent
     transition: border-color .3s ease
+
+    span
+      line-height: 18px
+      display: inline-block
+      vertical-align: middle
 
     &:hover, &:focus
       border-left: 4px solid $secondary-color
@@ -153,12 +155,12 @@
     display: block
     list-style: none
     text-align: right
-    margin-top: rem-calc(33px)
-
+    font-size: 0
+    margin: rem-calc(14px) 0
 
     li
       display: inline-block
-      margin-left: rem-calc(10px)
+      margin-left: rem-calc(8px)
 
       &:first-child
         margin-left: 0
@@ -166,7 +168,8 @@
       a
         display: block
         line-height: rem-calc(26px)
-        padding: rem-calc(8px 12px)
+        padding: rem-calc(8px 10px)
+        cursor: pointer
         vertical-align: middle
         border: 1px solid #E6F0F6
         transition: border-color .1s ease
@@ -188,3 +191,7 @@
             height: 24px
             padding-right: 5px
             content: url('../images/small-drop.png')
+
+@media #{$large-up}
+  .main-nav
+    margin: rem-calc(24px) 0

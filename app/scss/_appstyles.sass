@@ -6,16 +6,15 @@
 $button-border-color: #D9E7F1
 
 body
-  padding: rem-calc(40px 0)
   color: black
   font-family: Lato
-  font-size: 36px
   font-weight: 300
-  font-style: italic
 
 .content
-  padding-top: rem-calc(180px)
-  display: block
+  padding-top: rem-calc(60px)
+
+  @media #{$medium-up}
+    padding-top: rem-calc(130px)
 
 // Menu
 .menu
@@ -29,15 +28,30 @@ body
   right: 0
 
   .logo
-    margin-top: rem-calc(5px)
-    content: url('../images/logo.png')
+
+    img
+      max-height: rem-calc(30px)
+      vertical-align: middle
+      display: inline-block
+      line-height: 50px
+      margin: rem-calc(5px 8px 5px 0)
+
+      @media #{$medium-up}
+        margin: rem-calc(5px 12px 5px 0)
+        max-height: rem-calc(60px)
+
+      @media #{$large-up}
+        margin: rem-calc(5px 18px 5px 0)
+        max-height: rem-calc(80px)
+
   .title
-    margin-top: rem-calc(55px)
     color: black
+    line-height: 50px
+    display: inline-block
     font-family: Lato
     font-size: 18px
     font-weight: 300
-    line-height: 0
+    vertical-align: middle
 
 // mainPage
 .mainPage
@@ -46,6 +60,7 @@ body
     font-family: Lato
     font-size: 36px
     font-weight: 900
+    margin-top: rem-calc(20px)
 
 .large-paragraph
   font-size: rem-calc(22px)
@@ -91,35 +106,52 @@ blockquote.quote, blockquote.small-quote
   position: relative
   margin-bottom: 35px
 
-  cite
-    font-weight: 700
+cite
+  font-weight: 700
+  margin-left: 0
+  margin-top: 15px
+  line-height: rem-calc(18px)
+
+  @media #{$medium-up}
     margin-left: 0
-    margin-top: 15px
-    line-height: rem-calc(19px)
 
-    @media #{$medium-up}
-      margin-left: 0
+  .cite-location
+    display: block
+    font-size: rem-calc(14px)
+    font-weight: 300
+    line-height: rem-calc(15px)
 
-    .cite-location
-      display: block
-      font-weight: 300
+.cite-with-portrait:before
+  content: none
 
-  .stanislaw-czachorowski:before
-    display: inline
-    content: url('../images/stanislaw-czachorowski.png')
-  .marek-biziuk:before
-    display: inline
-    content: url('../images/marek-biziuk.png')
-  .tadeusz-bochnia:before //- TODO poprawne zdjęcie
-    display: inline
-    content: url('../images/marek-biziuk.png')
+.cite-portrait-large
+  display: inline-block
+  margin-right: rem-calc(10px)
+  height: rem-calc(60px)
+
+
+.cite-portrait-small
+  display: inline-block
+  height: rem-calc(40px)
+  margin-right: rem-calc(6px)
+
+.cite-author
+  display: inline-block
+  vertical-align: middle
+  max-width: calc(100% - 80px)
+
+.myths-title,
+.myths
+  margin-top: rem-calc(30px)
 
 .myths
-  .quote
+
+  .quote,
+  .myth
+    padding-left: 0
 
     @media #{$medium-up}
-      padding-left: 0
-      padding-right: 60px
+      padding-right: 40px
 
       &:before
         left: -40px
@@ -139,9 +171,9 @@ blockquote.quote, blockquote.small-quote
 
 
 blockquote.quote:before
-  content: "“"
+  content: ""
   font-size: rem-calc(96px)
-  color: #636363
+  color: $primary-color
   position: absolute
   left: 0px
   top: 30px
@@ -168,6 +200,7 @@ button.with-icon.hollow,
     width: 230px
 
     &:before
+      height: 56px
       content: url('../images/clipboard.png')
 
   &.location
@@ -175,6 +208,7 @@ button.with-icon.hollow,
     width: 230px
 
     &:before
+      height: 56px
       content: url('../images/location.png')
 
 .refferal-marta, .refferal-maciej
@@ -188,7 +222,8 @@ button.with-icon.hollow,
       margin-left: 0
 
 .button.with-icon,
-button.with-icon
+button.with-icon,
+a.with-icon
   padding: 10px 18px 11px
 
   span
@@ -196,18 +231,45 @@ button.with-icon
     vertical-align: middle
     text-align: left
     margin-left: 16px
-    line-height: rem-calc(20px)
+    line-height: rem-calc(18px)
     font-size: rem-calc(18px)
+    white-space: nowrap
 
   i
     display: inline-block
     vertical-align: middle
 
-  i.envelope:before
-    content: url('../images/envelope.png')
+  i.folder
+    background-image: url('../images/folder.svg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: contain
+    height: rem-calc(40px)
+    width: rem-calc(40px)
 
-  i.social-facebook:before
-    content: url('../images/social-facebook.png')
+  i.envelope
+    background-image: url('../images/envelope.svg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: contain
+    height: rem-calc(40px)
+    width: rem-calc(40px)
+
+  i.social-instagram
+    background-image: url('../images/instagram.svg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: contain
+    height: rem-calc(40px)
+    width: rem-calc(40px)
+
+  i.social-facebook
+    background-image: url('../images/social-facebook.png')
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: contain
+    height: rem-calc(40px)
+    width: rem-calc(20px)
 
 .button.with-icon--vertical
   background: none
@@ -219,7 +281,7 @@ button.with-icon
   z-index: 19
   position: relative
   margin-top: 250px
-  display: block
+  display: inline-block
 
   @media #{$medium-up}
     margin-top: 0
@@ -268,7 +330,7 @@ button.with-icon
 // Page 3
 .map
   position: relative
-  margin-top: -10px
+  margin-top: -20px
   margin-bottom: 20px
 
   .loading
@@ -284,7 +346,7 @@ button.with-icon
 iframe
   background: none
 
-// How to support 
+// How to support
 .how-to-help
   margin-left: -10px
   font-weight: 700
@@ -307,39 +369,18 @@ iframe
   background-position: top left
   min-height: 450px
 
-.bottles-cta
-  margin-top: 150px
 
 
 // Page 5
 .partners
-  .stanislaw-czachorowski:before
+  margin-top: rem-calc(36px)
+  margin-bottom: rem-calc(36px)
+
+  .cite-with-portrait
     display: block
-    content: url('../images/stanislaw-czachorowski.png')
-  .marek-biziuk:before
-    display: block
-    content: url('../images/marek-biziuk.png')
-  .lukasz-balwicki:before
-    display: block
-    content: url('../images/stanislaw-czachorowski.png')
-  .equa:before
-    display: block
-    content: url('../images/equa.png')
-  .kierunek-wodkan:before
-    display: block
-    content: url('../images/kierunek_wodkan_pion.png')
-  .ulica-ekologiczna:before
-    display: block
-    content: url('../images/ulica-ekologiczna-logo-2.png')
+    margin-bottom: 5px
 
 // Page 6
-.about
-  .michal-kozurno:before
-    content: url('../images/michal-kozurno.png')
-    margin: 0 auto
-  .szymon-boniecki:before
-    content: url('../images/szymon-boniecki.png')
-    margin: 0 auto
 
 // Page 7
 .media
@@ -353,16 +394,85 @@ iframe
     font-weight: 300
     text-decoration: underline
 
-    &:hover, &:focus
-      font-weight: 400
 
 
   .header
     font-weight: 700
+    margin-top: rem-calc(24px)
 
   .city
     font-weight: 300
     font-style: italic
+
+.links-list
+  list-style: none
+  margin: 0
+  padding: 0
+
+  li
+    margin-bottom: rem-calc(10px)
+
+  a
+    text-decoration: none
+    font-size: rem-calc(16px)
+    line-height: rem-calc(28px)
+    position: relative
+    display: inline-block
+    color: $primary-color
+    height: 100%
+    padding: rem-calc(0 0px 0 0)
+    transition: color .2s ease, padding .2s ease
+    cursor: pointer
+
+
+.section-anchor
+  padding-top: rem-calc(60px)
+
+.social-buttons
+  margin-top: rem-calc(110px)
+  margin-bottom: rem-calc(110px)
+
+.fixed-size
+  width: rem-calc(80px)
+  height: rem-calc(70px)
+  padding: rem-calc(14px) !important
+  margin: 0 10px
+
+
+.waves-footer
+  background-color: $primary-color
+  position: relative
+  min-height: 500px
+  margin-top: 60px
+  color: white
+  padding-top: 50px
+
+  p
+    margin-bottom: 20px
+    font-size: rem-calc(16px)
+
+  &:before
+    content: ""
+    display: block
+    height: 40px
+    width: 100%
+    position: absolute
+    top: -20px
+    left: 0
+    background-image: url('../images/waves.png')
+    background-repeat: repeat-x
+    background-position: top left
+
+.waste
+  background-image: url('../images/waste.png')
+  background-position: top center
+  background-repeat: no-repeat
+  background-size: cover
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: 250px
+  left: 0
 
 @media #{$small-only}
 
@@ -379,13 +489,13 @@ iframe
       padding-right: 30%
 
   .refferal-marta
-    top: -120px
+    // top: -120px
     padding-bottom: 10px
 
     &:after
       content: url('../images/marta.png')
       position: relative
-      top: -120px
+      // top: -120px
       left: -70px
       z-index: -1
 
@@ -393,6 +503,15 @@ iframe
       padding-left: 30%
 
 @media #{$medium-up}
+
+  .button.with-icon--vertical
+    margin-top: 130px
+
+  blockquote.quote:before
+    content: "“"
+
+  .section-anchor
+    padding-top: rem-calc(95px)
 
   .refferals
     margin-top: 100px
@@ -424,6 +543,50 @@ iframe
 
     blockquote.small-quote
       padding-right: 30%
+
+  .links-list
+
+    a
+      text-decoration: none
+      font-size: rem-calc(16px)
+      line-height: rem-calc(28px)
+      position: relative
+      display: inline-block
+      height: 100%
+      padding: rem-calc(0 0px 0 0)
+      transition: color .2s ease, padding .2s ease
+      cursor: pointer
+      color: $primary-color
+
+      &:after
+        padding: rem-calc(0 8px 0 28px)
+        content: attr(title)
+        display: block
+        position: absolute
+        top: rem-calc(24px)
+        left: 0
+        color: white
+        cursor: pointer
+        width: 100%
+        border-radius: $global-radius
+        height: 1px
+        background-color: $primary-color
+        background-image: url('../images/link.png')
+        background-size: 14px 14px
+        background-position: 8px 7px
+        background-repeat: no-repeat
+        transform: translateY(0)
+        transition: top .2s ease 0s, height .2s ease 0s
+        overflow: hidden
+
+      &:hover
+        padding: rem-calc(0 36px 0 0)
+        color: white
+
+        &:after
+          top: 0
+          transition: top .2s ease 0s, height .2s ease .2s
+          height: 100%
 
 @media #{$large-up}
 
