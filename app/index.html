@@ -15,7 +15,7 @@
   <body>
     <div class="menu">
       <div class="row">
-        <div class="small-8 medium-1 large-3 columns"><a href="/" class="logo"><img src="images/logo.png">
+        <div class="small-8 medium-1 large-3 columns"><a id="logo" href="/" class="logo"><img src="images/logo.png">
             <div class="title black hide-for-medium">Piję wodę z kranu</div></a></div>
         <div class="small-4 medium-11 large-9 columns">
           <div>
@@ -29,13 +29,13 @@
               <li><a href="#prasa" class="mobile-nav__element">Prasa</a></li>
             </ul>
           </div>
-          <ul class="main-nav">
-            <li><a href="#tudostanieszwodezkranu" class="smallDrop">Tu dostaniesz wodę z kranu</a></li>
-            <li><a href="#prawdyimity">Prawdy i mity</a></li>
-            <li><a href="#wesprzyj">Wesprzyj</a></li>
-            <li><a href="#partnerzy">Partnerzy</a></li>
-            <li><a href="#onas">O nas</a></li>
-            <li><a href="#prasa">Prasa</a></li>
+          <ul id="mainMenu" class="main-nav">
+            <li><a id="tudostanieszwodezkranuMenu" href="#tudostanieszwodezkranu" class="smallDrop">Tu dostaniesz wodę z kranu</a></li>
+            <li><a id="prawdyimityMenu" href="#prawdyimity">Prawdy i mity</a></li>
+            <li><a id="wesprzyjMenu" href="#wesprzyj">Wesprzyj</a></li>
+            <li><a id="partnerzyMenu" href="#partnerzy">Partnerzy</a></li>
+            <li><a id="onasMenu" href="#onas">O nas</a></li>
+            <li><a id="prasaMenu" href="#prasa">Prasa</a></li>
           </ul>
         </div>
       </div>
@@ -52,13 +52,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="small-12 medium-10 columns small-centered"><div id="fb-root"></div>
-          <div class="fb-like-box" data-href="https://www.facebook.com/PijeWodeZKranu" data-width="100%" data-height="200" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+        <div class="small-12 medium-10 columns small-centered">
           <h1>{{ Tu facebook }}</h1>
           <p class="black">Piję wodę z kranu to społeczna inicjatywa promująca ideę zrównoważonego rozwoju. Zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną, co jest nieekologiczne, nieekonomiczne i niepraktyczne.</p>
         </div>
       </div>
-      <div class="row">
+      <div id="mainPageSection" class="row">
         <div class="small-12 medium-6 columns small-centered">
           <blockquote class="quote">Piję wodę z kranu, bo jest bardzo dobrej jakości, bo jest znacznie tańsza od butelkowej, kupowanej w sklepie oraz dlatego, że czuję się odpowiedzialny za przyrodę wokół mnie.
             <cite class="cite-with-portrait"><img src="images/stanislaw-czachorowski.png" class="cite-portrait-large">
@@ -67,7 +66,7 @@
           </blockquote>
         </div>
       </div>
-      <div class="sectionBreak"></div>
+      <div id="tudostanieszwodezkranu" class="sectionBreak"></div>
       <div class="row">
         <div class="small-12 medium-10 columns small-centered">
           <p class="large-paragraph black">W akcji <span class="blue bold">Tu dostaniesz wodę z kranu</span> biorą udział miejsca, które podają swoim klientom darmową wodę z kranu. Dzięki temu możemy dostać wodę do posiłku lub napełnić swoją butelkę bez względu na to, czy jesteśmy w domu czy poza nim.</p>
@@ -89,7 +88,7 @@
           </div>
         </div>
       </section>
-      <section id="tudostanieszwodezkranu" class="map">
+      <section class="map">
         <iframe width="100%" height="500px" frameborder="0" src="https://a.tiles.mapbox.com/v4/pijewodezkranu.j4e8dmme/attribution,zoompan,geocoder,share.html?access_token=pk.eyJ1IjoicGlqZXdvZGV6a3JhbnUiLCJhIjoiOHlHZUtxQSJ9.bzfI7E6aGTFl-Rm_O5ZIrw"></iframe>
         <div class="row loading">
           <div class="small-12 text-center columns">
@@ -358,6 +357,7 @@
       <div class="waste"></div>
     </div>
     <script src="bower_components/smooth-scroll/smooth-scroll.min.js"></script>
+    <script src="bower_components/waypoints/lib/noframework.waypoints.min.js"></script>
     <script>
       var body, navToggled, toggleNav, trigger;
       
@@ -385,6 +385,79 @@
         navLink = mobileNavElements[_i];
         navLink.onclick = toggleNav
       }
+      
+      //- Podświetlanie menu
+      function highlightMenu(menuId) { 
+      	//- console.log('Podświetlanie menu id: ' + menuId);
+      	document.getElementById(menuId).focus();
+      }
+      //- function createMenu(sectionId, menuId) {
+      var getWater = new Waypoint({
+        element: document.getElementById("tudostanieszwodezkranu"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('mainMenu')
+          } else {
+          	highlightMenu('tudostanieszwodezkranuMenu')
+          }
+        },
+        offset: 10
+      })
+      var truthsAndMyths = new Waypoint({
+        element: document.getElementById("prawdyimity"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('tudostanieszwodezkranuMenu')
+          } else {
+          	highlightMenu('prawdyimityMenu')
+          }
+        },
+        offset: 150
+      })
+      var howToSupport = new Waypoint({
+        element: document.getElementById("wesprzyj"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('prawdyimityMenu')
+          } else {
+          	highlightMenu('wesprzyjMenu')
+          }
+        },
+        offset: 100
+      })
+      var partners = new Waypoint({
+        element: document.getElementById("partnerzy"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('wesprzyjMenu')
+          } else {
+          	highlightMenu('partnerzyMenu')
+          }
+        },
+        offset: 100
+      })
+      var about = new Waypoint({
+        element: document.getElementById("onas"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('partnerzyMenu')
+          } else {
+          	highlightMenu('onasMenu')
+          }
+        },
+        offset: 50
+      })
+      var media = new Waypoint({
+        element: document.getElementById("prasa"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('onasMenu')
+          } else {
+          	highlightMenu('prasaMenu')
+          }
+        },
+        offset: 50
+      })
     </script>
   </body>
 </html>

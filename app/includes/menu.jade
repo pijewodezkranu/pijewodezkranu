@@ -1,7 +1,7 @@
 .menu
   .row
     .small-8.medium-1.large-3.columns
-      a.logo(href="/")
+      a.logo(id="logo" href="/")
         img(src="images/logo.png")
         .title.black.hide-for-medium Piję wodę z kranu
     .small-4.medium-11.large-9.columns
@@ -17,11 +17,11 @@
           li: a.mobile-nav__element(href="#onas") O nas
           li: a.mobile-nav__element(href="#prasa") Prasa
 
-      ul.main-nav
+      ul.main-nav#mainMenu
         //- TODO do poprawienia kropla
-        li: a(href="#tudostanieszwodezkranu" class="smallDrop") Tu dostaniesz wodę z kranu
-        li: a(href="#prawdyimity") Prawdy i mity
-        li: a(href="#wesprzyj") Wesprzyj
-        li: a(href="#partnerzy") Partnerzy
-        li: a(href="#onas") O nas
-        li: a(href="#prasa") Prasa
+        li: a(id="tudostanieszwodezkranuMenu" href="#tudostanieszwodezkranu" class="smallDrop") Tu dostaniesz wodę z kranu
+        li: a(id="prawdyimityMenu" href="#prawdyimity") Prawdy i mity
+        li: a(id="wesprzyjMenu" href="#wesprzyj") Wesprzyj
+        li: a(id="partnerzyMenu" href="#partnerzy") Partnerzy
+        li: a(id="onasMenu" href="#onas") O nas
+        li: a(id="prasaMenu" href="#prasa") Prasa

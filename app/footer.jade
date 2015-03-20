@@ -16,6 +16,7 @@
 	.waste
 
 script(src="bower_components/smooth-scroll/smooth-scroll.min.js")
+script(src="bower_components/waypoints/lib/noframework.waypoints.min.js")
 script.
 	var body, navToggled, toggleNav, trigger;
 
@@ -44,4 +45,75 @@ script.
 	  navLink.onclick = toggleNav
 	}
 
-
+	//- Podświetlanie menu
+	function highlightMenu(menuId) { 
+		//- console.log('Podświetlanie menu id: ' + menuId);
+		document.getElementById(menuId).focus();
+	}
+	//- function createMenu(sectionId, menuId) {
+	var getWater = new Waypoint({
+	  element: document.getElementById("tudostanieszwodezkranu"),
+	  handler: function(direction) {
+	    if(direction == "up") {
+	    	highlightMenu('mainMenu')
+	    } else {
+	    	highlightMenu('tudostanieszwodezkranuMenu')
+	    }
+	  },
+	  offset: 10
+	})
+	var truthsAndMyths = new Waypoint({
+	  element: document.getElementById("prawdyimity"),
+	  handler: function(direction) {
+	    if(direction == "up") {
+	    	highlightMenu('tudostanieszwodezkranuMenu')
+	    } else {
+	    	highlightMenu('prawdyimityMenu')
+	    }
+	  },
+	  offset: 150
+	})
+	var howToSupport = new Waypoint({
+	  element: document.getElementById("wesprzyj"),
+	  handler: function(direction) {
+	    if(direction == "up") {
+	    	highlightMenu('prawdyimityMenu')
+	    } else {
+	    	highlightMenu('wesprzyjMenu')
+	    }
+	  },
+	  offset: 100
+	})
+	var partners = new Waypoint({
+	  element: document.getElementById("partnerzy"),
+	  handler: function(direction) {
+	    if(direction == "up") {
+	    	highlightMenu('wesprzyjMenu')
+	    } else {
+	    	highlightMenu('partnerzyMenu')
+	    }
+	  },
+	  offset: 100
+	})
+	var about = new Waypoint({
+	  element: document.getElementById("onas"),
+	  handler: function(direction) {
+	    if(direction == "up") {
+	    	highlightMenu('partnerzyMenu')
+	    } else {
+	    	highlightMenu('onasMenu')
+	    }
+	  },
+	  offset: 50
+	})
+	var media = new Waypoint({
+	  element: document.getElementById("prasa"),
+	  handler: function(direction) {
+	    if(direction == "up") {
+	    	highlightMenu('onasMenu')
+	    } else {
+	    	highlightMenu('prasaMenu')
+	    }
+	  },
+	  offset: 50
+	})
