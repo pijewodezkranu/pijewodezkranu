@@ -1,11 +1,11 @@
 
 .row.social-buttons
 	.column.text-center
-		a.button.radius.with-icon.fixed-size(href="#")
+		a.button.radius.with-icon.fixed-size(href="https://www.facebook.com/PijeWodeZKranu")
 			i.social-facebook
-		a.button.radius.with-icon.fixed-size(href="#")
+		a.button.radius.with-icon.fixed-size(href="http://instagram.com/pijewodezkranu")
 			i.social-instagram
-		a.button.radius.with-icon.fixed-size(href="#")
+		a.button.radius.with-icon.fixed-size(href="mailto:kontakt@pijewodezkranu.org")
 			i.envelope
 
 .waves-footer
@@ -15,8 +15,9 @@
 			p © 2015 Fundacja Czyściutko
 	.waste
 
-script(src="js/smooth-scroll/smooth-scroll.min.js")
-script(src="js/waypoints/lib/noframework.waypoints.min.js")
+//- script(src="js/smooth-scroll.min.js")
+//- script(src="js/noframework.waypoints.min.js")
+script(src="js/app.min.js")
 script.
 	var body, navToggled, toggleNav, trigger;
 
@@ -46,7 +47,7 @@ script.
 	}
 
 	//- Podświetlanie menu
-	function highlightMenu(menuId) { 
+	function highlightMenu(menuId) {
 		//- console.log('Podświetlanie menu id: ' + menuId);
 		document.getElementById(menuId).focus();
 	}

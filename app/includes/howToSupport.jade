@@ -10,7 +10,9 @@
         p Jeszcze kilka lat temu sami piliśmy wodę butelkowaną, bo nikt nam nie powiedział, że ta z kranu jest równie dobra!
 
       .text-center
-        button.button.radius.with-icon
+        div.fb-share-button(data-href="https://www.facebook.com/PijeWodeZKranu" data-layout="button")
+        //- TODO share button doesn't work if customized
+        //- div.button.radius.with-icon.fb-share-button(data-href="https://www.facebook.com/PijeWodeZKranu" data-layout="button")
           i.social-facebook
           span Podziel się<br>na facebooku
 
@@ -19,7 +21,7 @@
         p Napisz do nas, jeśli uważasz, że powinniśmy podjąć inne działania lub chcesz nam coś zasugerować.
 
       .text-center
-        button.button.radius.with-icon
+        a.button.radius.with-icon(href="mailto:kontakt@pijewodezkranu.org")
           i.envelope
           span Skontaktuj się:<br>kontakt@pijewodezkranu.org
 

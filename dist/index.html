@@ -4,15 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piję Wodę z Kranu</title>
+    <!-- bower:css-->
+    <!-- endbower-->
+    <!-- endbuild-->
     <link rel="stylesheet" href="css/app.min.css">
     <style>
-      .mobile-nav--show .mobile-nav__trigger span{background:none !important}.mobile-nav--show .mobile-nav__trigger span:before,.mobile-nav--show .mobile-nav__trigger span:after{top:0}.mobile-nav--show .mobile-nav__trigger span:before{transform:rotate3d(0, 0, 1, 45deg)}.mobile-nav--show .mobile-nav__trigger span:after{transform:rotate3d(0, 0, 1, -45deg)}.mobile-nav--show .mobile-nav{transform:translateX(0)}.mobile-nav--show .mobile-nav li{opacity:1;transform:translateX(0)}
+      body.mobile-nav--show .mobile-nav__trigger span{background:none !important}.mobile-nav--show .mobile-nav__trigger span:before,.mobile-nav--show .mobile-nav__trigger span:after{top:0}.mobile-nav--show .mobile-nav__trigger span:before{transform:rotate3d(0, 0, 1, 45deg)}.mobile-nav--show .mobile-nav__trigger span:after{transform:rotate3d(0, 0, 1, -45deg)}.mobile-nav--show .mobile-nav{transform:translateX(0)}.mobile-nav--show .mobile-nav li{opacity:1;transform:translateX(0)}
     </style>
   </head>
   <body>
     <div class="menu">
       <div class="row">
-        <div class="small-8 medium-1 large-3 columns"><a href="http://pijewodezkranu.org" class="logo"><img src="images/logo.png">
+        <div class="small-8 medium-1 large-3 columns"><a id="logo" href="/" class="logo"><img src="images/logo.png">
             <div class="title black hide-for-medium">Piję wodę z kranu</div></a></div>
         <div class="small-4 medium-11 large-9 columns">
           <div>
@@ -26,13 +29,13 @@
               <li><a href="#prasa" class="mobile-nav__element">Prasa</a></li>
             </ul>
           </div>
-          <ul class="main-nav">
-            <li><a href="#tudostanieszwodezkranu" class="smallDrop">Tu dostaniesz wodę z kranu</a></li>
-            <li><a href="#prawdyimity">Prawdy i mity</a></li>
-            <li><a href="#wesprzyj">Wesprzyj</a></li>
-            <li><a href="#partnerzy">Partnerzy</a></li>
-            <li><a href="#onas">O nas</a></li>
-            <li><a href="#prasa">Prasa</a></li>
+          <ul id="mainMenu" class="main-nav">
+            <li><a id="tudostanieszwodezkranuMenu" href="#tudostanieszwodezkranu" class="smallDrop">Tu dostaniesz wodę z kranu</a></li>
+            <li><a id="prawdyimityMenu" href="#prawdyimity">Prawdy i mity</a></li>
+            <li><a id="wesprzyjMenu" href="#wesprzyj">Wesprzyj</a></li>
+            <li><a id="partnerzyMenu" href="#partnerzy">Partnerzy</a></li>
+            <li><a id="onasMenu" href="#onas">O nas</a></li>
+            <li><a id="prasaMenu" href="#prasa">Prasa</a></li>
           </ul>
         </div>
       </div>
@@ -42,24 +45,46 @@
         <div class="small-12 medium-10 columns small-centered">
           <h1 class="question dash">Czy w polskich miastach można pić wodę z kranu bez przegotowania?</h1>
           <h1 class="blueBold">Tak!</h1>
-          <p class="blue">Jakość wody wodociągowej określa Polskie prawo oraz regulacje Unii Europejskiej. Warto korzystać z wody z kranu, w porównaniu z wodą butelkowaną jest to znacznie wygodniejsze, tańsze i proekologiczne!</p>
+          <p class="blue">
+            Jakość wody wodociągowej określa Polskie prawo oraz regulacje Unii Europejskiej.
+            Woda z kranu w Londynie, Paryżu i Warszawie spełnia te same wymagania!
+          </p>
         </div>
       </div>
       <div class="row">
         <div class="small-12 medium-10 columns small-centered">
-          <h1>{{ Tu facebook }}</h1>
+          <div id="fb-root"></div>
+          <script>
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '1560383574236987',
+                xfbml      : true,
+                version    : 'v2.1'
+              });
+            };
+
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&appId=1560383574236987&version=v2.0";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+          </script>
+          <div data-href="https://www.facebook.com/PijeWodeZKranu" data-width="100%" data-height="200" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" class="fb-like-box"></div>
           <p class="black">Piję wodę z kranu to społeczna inicjatywa promująca ideę zrównoważonego rozwoju. Zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną, co jest nieekologiczne, nieekonomiczne i niepraktyczne.</p>
         </div>
       </div>
-      <div class="row">
+      <div id="mainPageSection" class="row">
         <div class="small-12 medium-6 columns small-centered">
           <blockquote class="quote">Piję wodę z kranu, bo jest bardzo dobrej jakości, bo jest znacznie tańsza od butelkowej, kupowanej w sklepie oraz dlatego, że czuję się odpowiedzialny za przyrodę wokół mnie.
             <cite class="cite-with-portrait"><img src="images/stanislaw-czachorowski.png" class="cite-portrait-large">
-              <div class="cite-author"><span>dr hab. Stanisław Czachorowski prof. UWM</span><span class="cite-location">Wydział Biologii i Biotechnologii<br>UWM w Olsztynie</span></div>
+              <div class="cite-author"><span>Prof. UWM dr hab. Stanisław Czachorowski</span><span class="cite-location">Wydział Biologii i Biotechnologii<br>UWM w Olsztynie</span></div>
             </cite>
           </blockquote>
         </div>
       </div>
+      <div id="tudostanieszwodezkranu" class="sectionBreak"></div>
       <div class="row">
         <div class="small-12 medium-10 columns small-centered">
           <p class="large-paragraph black">W akcji <span class="blue bold">Tu dostaniesz wodę z kranu</span> biorą udział miejsca, które podają swoim klientom darmową wodę z kranu. Dzięki temu możemy dostać wodę do posiłku lub napełnić swoją butelkę bez względu na to, czy jesteśmy w domu czy poza nim.</p>
@@ -81,7 +106,7 @@
           </div>
         </div>
       </section>
-      <section id="tudostanieszwodezkranu" class="map">
+      <section class="map">
         <iframe width="100%" height="500px" frameborder="0" src="https://a.tiles.mapbox.com/v4/pijewodezkranu.j4e8dmme/attribution,zoompan,geocoder,share.html?access_token=pk.eyJ1IjoicGlqZXdvZGV6a3JhbnUiLCJhIjoiOHlHZUtxQSJ9.bzfI7E6aGTFl-Rm_O5ZIrw"></iframe>
         <div class="row loading">
           <div class="small-12 text-center columns">
@@ -91,7 +116,7 @@
       </section>
       <div class="row">
         <div class="small-12 medium-10 small-centered columns">
-          <p class="black">Aby otrzymać zgodę na otwarcie lokalu gastronomicznego, próbka wody pobranej z kranu, z którego będzie nalewana woda do picia i gotowania, musi pozytywnie przejśc badanie sanepidu! Ponieważ w kawiarniach i restauracjach jakość wody podlega szczególnej kontroli, postanowiliśmy rozwijać mapę miejsc, których właściciele serwują ją za darmo. Lista jest na bieżąco aktualizowana. Czekamy na wasze zgłoszenia!</p>
+          <p class="black">Aby otrzymać zgodę na otwarcie lokalu gastronomicznego, próbka wody pobranej z kranu, z którego będzie nalewana woda do picia i gotowania, musi pozytywnie przejśc badanie sanepidu! Ponieważ w kawiarniach i restauracjach jakość wody podlega szczególnej kontroli, postanowiliśmy rozwijać mapę miejsc, których właściciele serwują ją za darmo.</p>
           <div class="row">
             <div class="small-12 medium-6 columns small-text-center medium-text-right">
               <button class="button with-icon clipboard hollow">Zobacz listę miejsc</button>
@@ -102,6 +127,7 @@
           </div>
         </div>
       </div>
+      <div class="sectionBreak"></div>
       <div id="prawdyimity" class="row section-anchor">
         <div class="small-12 medium-10 columns small-centered">
           <h1 class="question centered">Woda z kranu jest inna niż 10 lat temu!<br>Co się zmieniło?</h1>
@@ -111,30 +137,30 @@
       <section class="myths">
         <div class="row">
           <div class="small-12 medium-5 columns medium-offset-1">
-            <p class="myth italic red">Zawsze byłem przekonany, że woda w kranie nie nadaje się do picia, a wręcz jest trująca. Czy coś się zmieniło?</p>
-            <blockquote class="quote blue">Tak! <span class="bold">W ostatnich latach gruntownie zmodernizowano systemy uzdatniania wody.</span> Warszawa, Kraków, Wrocław, Poznań, Gdańsk, Łódź, Lublin, Katowice i wiele innych miast mają teraz świetna wodę!!</blockquote>
+            <p class="myth italic red">Zawsze byłem przekonany, że woda w kranie nie nadaje się do picia, a wręcz jest trująca.</p>
+            <blockquote class="quote blue no-author"><span class="bold">W ostatnich latach gruntownie zmodernizowano systemy uzdatniania wody.</span> Warszawa, Kraków, Wrocław, Poznań, Gdańsk, Łódź, Lublin, Katowice i wiele innych miast mają teraz świetną wodę!!</blockquote>
             <p class="myth italic red">Słyszałem, że wodzie kranowej nie ma minerałów.</p>
-            <blockquote class="quote blue">Woda w kranach jest czysta i zdrowa, a dodatkowo posiada minerały w tym biopierwiastki takie jak wapń i magnez. Ich ilość jest zależna od miejsca np. w Warszawie: jest to ok 250 mg/l, a w Krakowie: ponad 300 mg/litr.</blockquote>
-            <p class="myth italic red">Przegotowanie zmiękcza wodę.</p>
+            <blockquote class="quote blue no-author">Woda z kranu posiada minerały w tym biopierwiastki takie jak wapń i magnez. Ich ilość jest zależna od miejsca np. w Warszawie: jest to ok 250 mg/l, a w Krakowie: ponad 300 mg/litr. Denerwuje Cię kamień osadzający się w czajniku? To są właśnie cenne minerały!</blockquote>
+            <p class="myth italic red">Przegotowana woda jest zdrowsza.</p>
             <blockquote class="quote blue">Przegotowanie wody powoduje wytrącenie w postaci osadu (kamienia) części minerałów – zwłaszcza związków wapnia i magnezu – co zmiękcza wodę, ale również powoduje zubożenie składu mineralnego wody. Z tego powodu gotowanie wody nie jest zalecane przy bezpośrednim spożyciu.
               <cite class="cite-with-portrait"><img src="images/marek-biziuk.png" class="cite-portrait-small">
-                <div class="cite-author"><span>prof. dr hab. Marek Biziuk</span><span class="cite-location">Wydział Chemiczny Politechniki Gdańskiej</span></div>
+                <div class="cite-author"><span>Prof. dr hab. Marek Biziuk</span><span class="cite-location">Wydział Chemiczny Politechniki Gdańskiej</span></div>
               </cite>
             </blockquote>
           </div>
           <div class="small-12 medium-5 columns end">
-            <p class="myth red">Podczas gotowania wody, w czajniku wytrąca się kamień. Czy spożywanie takiej twardej wody ma wpływ na powstawanie kamieni w organiźmie człowieka?</p>
-            <blockquote class="quote blue"><span class="bold">Picie wody kranowej nie odpowiada za powstawanie kamieni nerkowych oraz żółciowych.</span> Wody butelkowane przeważnie zawierają podobne ilości minerałów.
-              <cite>lek. med. Konstanty Radziwiłł<span class="cite-location">prezes Naczelnej Rady Lekarskiej w Naczelnej Izbie Lekarskiej (2001-2010)</span></cite>
+            <p class="myth red">Zawsze mi powtarzano, że od picia kranówy będę miał kamienie nerkowe.</p>
+            <blockquote class="quote blue"><span class="bold">Picie wody kranowej nie odpowiada za powstawanie kamieni nerkowych oraz żółciowych.</span>
+              <cite>Lek. med. Konstanty Radziwiłł<span class="cite-location">prezes Naczelnej Rady Lekarskiej w Naczelnej Izbie Lekarskiej (2001-2010)</span></cite>
             </blockquote>
             <p class="myth red">Woda płynie rurami miejskimi, każdy może coś do niej dosypać.</p>
-            <blockquote class="quote blue"><span class="bold">Jakość wody jest kontrolowana, także podczas transportu rurami.</span> Poza tym panujące w nich wysokie ciśnienie oraz to, że są położne głęboko w ziemi, sprawia, że ich nawiercenie i dodanie czegokolwiek czegoś do wody, jest niemożliwe.
+            <blockquote class="quote blue"><span class="bold">Jakość wody jest kontrolowana, także podczas transportu rurami.</span> Panujące w nich wysokie ciśnienie oraz to, że są położne głęboko w ziemi, sprawia, że ich nawiercenie i dodanie czegokolwiek do wody jest niemożliwe.
               <cite class="cite-with-portrait"><img src="images/tadeusz-bochnia.png" class="cite-portrait-small">
-                <div class="cite-author"><span>dr Tadeusz Bochnia</span><span class="cite-location">Kierownik Centralnego Laboratorium MPWiK Kraków</span></div>
+                <div class="cite-author"><span>Dr Tadeusz Bochnia</span><span class="cite-location">Kierownik Centralnego Laboratorium MPWiK Kraków</span></div>
               </cite>
             </blockquote>
-            <p class="myth red">Wiele razy widziałem, że z kranu leci brązowa woda, myślę, że można się nią zatruć.</p>
-            <blockquote class="quote blue">Brązowe zabarwienie zazwyczaj jest wynikiem podwyższonej zawartości żelaza. Może ono powstawać w trakcie napraw lub czyszczenia sieci oraz w okresie wakacyjnych wyjazdów - kiedy mniej ludzi korzysta z wody. Samo żelazo nie jest szkodliwe, gdy woda ma dziwny wygląd, zalecamy powstrzymać się od jej picia do momentu zniknięcia przebarwienia.</blockquote>
+            <p class="myth red">Wiele razy widziałem, że z kranu leci brązowa woda. Myślę, że można się nią zatruć.</p>
+            <blockquote class="quote blue no-author">Brązowe zabarwienie zazwyczaj jest wynikiem podwyższonej zawartości żelaza. Może ono powstawać w trakcie napraw lub czyszczenia sieci oraz w okresie wakacyjnych wyjazdów, kiedy mniej ludzi korzysta z wody. Samo żelazo nie jest szkodliwe, ale gdy woda ma dziwny wygląd, zalecamy powstrzymać się od jej picia do momentu zniknięcia przebarwienia.</blockquote>
           </div>
         </div>
       </section>
@@ -142,16 +168,19 @@
         <div class="columns small-12 medium-5 medium-offset-1">
           <p class="italic bold">Jak dziś działa kontrola jakości wody z Twojego kranu?</p>
           <p>Częstotliwość badania jakości wody jest powiązana z wielkością jej przepływu:</p>
-          <p><span class="bold">Jeśli mieszkasz w dużym lub średnim mieście,</span>Twoja woda jest z pewnością bardzo często kontrolowana. Jest badana zarówno przed wpuszczeniem do sieci, jak i podczas transportu siecią wodociągową. Jednym i za razem najkrótszym odcinkiem, na którym za wodę nie odpowiada jej producent jest odcinek instalacji wodociągowej w poszczególnych budynkach. Za instalację w budynku odpowiada zarządca budynku.</p>
-          <p><span class="bold">Jeśli mieszkasz na wsi lub w małym mieście</span>i nie masz zaufania do swojej wody, możesz zadzwonić i zapytać o jej jakość w zaopatrującym cię zakładzie wodociągowym, lokalnej stacji sanepidu albo zlecić dodatkowe badanie we własnym zakresie.</p>
-          <p><span class="bold">Jeśli masz wodę z własnej studni</span>za jej jakość i badanie odpowiadasz sam.</p>
+          <p><span class="bold">Jeśli mieszkasz w dużym lub średnim mieście,</span> Twoja woda jest z pewnością bardzo często kontrolowana. Jest badana zarówno przed wpuszczeniem, jak i podczas transportu siecią wodociągową. Jedynym i za razem najkrótszym odcinkiem, na którym za wodę nie odpowiada jej producent, jest instalacja wodociągowa w budynku. Za jej stan odpowiada zarządca.</p>
+          <p><span class="bold">Jeśli mieszkasz na wsi lub w małym mieście</span> i nie masz zaufania do swojej wody, możesz zadzwonić i zapytać o jej jakość w zaopatrującym cię zakładzie wodociągowym, lokalnej stacji sanepidu albo zlecić dodatkowe badanie we własnym zakresie.</p>
+          <p><span class="bold">Jeśli masz wodę z własnej studni</span> za jej jakość i badanie odpowiadasz sam.</p>
         </div>
         <div class="columns small-12 medium-5 end">
-          <p class="italic bold">Najciekawsze źródła o wodzie z kranu:</p>{{ obrazek-link }}
-          <p>Co się czai w wodzie z kranu? | Polimaty</p>{{ obrazek-link }}
+          <p class="italic bold">Najciekawsze źródła o wodzie z kranu:</p>
+          <iframe width="100%" src="https://www.youtube.com/embed/uL9kyYQ7Tfs" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          <p>Co się czai w wodzie z kranu? | Polimaty</p>
+          <iframe width="100%" src="https://www.youtube.com/embed/Se12y9hSOM0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
           <p>Krótka historia wody butelkowanej</p>
         </div>
       </div>
+      <div class="sectionBreak"></div>
       <div id="wesprzyj" class="row section-anchor">
         <div class="columns small-12 medium-10 small-centered">
           <h1 class="question italic centered">Jak wesprzeć akcję?</h1>
@@ -164,14 +193,12 @@
               <p>Jeszcze kilka lat temu sami piliśmy wodę butelkowaną, bo nikt nam nie powiedział, że ta z kranu jest równie dobra!</p>
             </li>
             <div class="text-center">
-              <button class="button radius with-icon"><i class="social-facebook"></i><span>Podziel się<br>na facebooku</span></button>
+              <div data-href="https://www.facebook.com/PijeWodeZKranu" data-layout="button" class="fb-share-button"></div>
             </div>
             <li class="black small-10 small-centered columns">Skontaktuj się z nami, jeśli masz inny pomysł na wsparcie akcji
               <p>Napisz do nas, jeśli uważasz, że powinniśmy podjąć inne działania lub chcesz nam coś zasugerować.</p>
             </li>
-            <div class="text-center">
-              <button class="button radius with-icon"><i class="envelope"></i><span>Skontaktuj się:<br>kontakt@pijewodezkranu.org</span></button>
-            </div>
+            <div class="text-center"><a href="mailto:kontakt@pijewodezkranu.org" class="button radius with-icon"><i class="envelope"></i><span>Skontaktuj się:<br>kontakt@pijewodezkranu.org</span></a></div>
             <li class="black small-10 small-centered columns">Kup sobie lub bliskiej osobie fajną butelkę!</li>
           </ol>
         </div>
@@ -179,7 +206,7 @@
       <div class="row">
         <div class="columns small-12 medium-10 small-centered">
           <h1>Przygotowaliśmy butelkę–cegiełkę. Dzięki niej możesz mieć wodę z kranu zawsze ze sobą!</h1>
-          <p>Od ponad 1,5 roku prowadzimy akcję w wolnym czasie i za własne pieniądze. Mamy sporo pomysłów, które powoli wdrażamy, ale chcemy to przyspieszyć, więc potrzebujemy wsparcia. <span class="black">Dlatego możecie wesprzeć akcję przez zakup praktycznej butelki: <span class="bold">cena to 59zł z czego 11zł trafi na konto naszej fundacji.</span></span></p>
+          <p>Od ponad 1,5 roku prowadzimy akcję w wolnym czasie i za własne pieniądze. Mamy sporo pomysłów, które powoli wdrażamy, ale chcemy to przyspieszyć, więc potrzebujemy wsparcia. <span class="lightBold">Dlatego możecie wesprzeć akcję przez zakup praktycznej butelki: <span class="bold">cena to 59zł z czego 11zł trafi na konto naszej fundacji.</span></span></p>
         </div>
       </div>
       <div class="row">
@@ -196,6 +223,7 @@
           <p class="italic black">Butelki wyprodukowała dla nas firma Equa, są bardzo wytrzymałe, lekkie i szczelne (przetestowane przez nas w każdych warunkach!). Zrobione ze specjalnego tworzywa Eastman Tritan®, które nie zawiera BPA, są odporne na mycie w zmywarce i wyparzanie wrzątkiem. Mają dwie niezależnie nakrętki, więc łatwo je myć i wrzucić ulubione zioła albo owoce!</p>
         </div>
       </div>
+      <div class="sectionBreak"></div>
       <div id="partnerzy" class="row section-anchor">
         <div class="small-12 medium-4 small-centered columns">
           <h3 class="black bold centered">Partnerzy merytoryczni</h3>
@@ -227,8 +255,9 @@
           <h3 class="black bold">Sponsorzy</h3>
         </div>
       </div>
-      <div class="row partners">
-        <div class="small-12 medium-4 small-centered columns text-center"><img src="images/equa.png" class="cite-portrait-large"></div>
+      <div class="row partners small-text-center">
+        <div class="small-12 text-center"><img src="images/equa.png" class="cite-portrait-large">
+        </div>
       </div>
       <div class="row">
         <div class="small-12 medium-4 small-centered columns text-center">
@@ -237,13 +266,14 @@
       </div>
       <div class="row partners small-text-center">
         <div class="small-12 medium-6 columns medium-text-right"><img src="images/kierunek_wodkan_pion.png" class="cite-portrait-large"></div>
-        <div class="small-12 medium-6 columns"><img src="images/ulica-ekologiczna-logo-2.png" class="cite-portrait-large"></div>
+        <div class="small-12 medium-6 columns medium-text-left"><img src="images/ulica-ekologiczna-logo-2.png" class="cite-portrait-large"></div>
       </div>
       <div class="row">
         <div class="columns small-12 medium-10 small-centered">
           <p class="black centered">Jesteś zainteresowany współpracą? Napisz do nas:<a href="mailto:kontakt@pijewodezkranu.org">kontakt@pijewodezkranu.org</a></p>
         </div>
       </div>
+      <div class="sectionBreak"></div>
       <div id="onas" class="row section-anchor">
         <div class="small-12 columns">
           <h1>Cześć!</h1>
@@ -251,7 +281,7 @@
       </div>
       <div class="row">
         <div class="small-12 medium-4 columns">
-          <p class="black bold">Żaden z nas nie jest hydrobiologiem i nie pracujemy w firmach związanych z wodą.</p>
+          <p class="black lightBold">Żaden z nas nie jest hydrobiologiem i nie pracujemy w firmach związanych z wodą.</p>
           <p class="black">Obaj interesujemy się technologiami, fascynuje nas ich oddziaływanie na społeczeństwo, zarówo „klasyczych” wynalazków, ale też dość nowych, takich jak elektryczne samochody.</p>
           <p class="black">Nowoczesny wodociąg — rzecz bez której ciężko wyobrazić sobie dziś życie – umożliwia nam utrzymanie higieny, ale też, co wciąż budzi w Polce zdziwienie – dostęp do wody pitnej! W wielu europejskich i amerykańskich miastach prośba o wodę, oznacza prośbę o wodę z kranu.</p>
         </div>
@@ -267,9 +297,11 @@
           </div>
         </div>
         <div class="small-12 columns">
-          <p class="black">Dlatego powołaliśmy do życia hasło: <span class="bold">Piję wodę z kranu.</span> Po roku działalności zdecydowaliśmy się zarejestrować fundację „Czyściutko”, która ma popularyzować idee racjonalnego wykorzystania zasobów, aby bezpłatną, zdrową i zimną wodę z kranu można było dostać w każdym polskim urzędzie, restauracji, barze, czy szkole.</p>
+          <p class="black">Dlatego powołaliśmy do życia hasło: <span class="italic">Piję wodę z kranu.</span>. Staramy się o to, aby bezpłatną, zdrową i zimną wodę z kranu można było dostać w każdym polskim urzędzie, restauracji, barze czy szkole.</p>
+          <p class="black">Po roku działalności zdecydowaliśmy się zarejestrować fundację <span class="italic">Czyściutko</span>, która ma popularyzować idee racjonalnego wykorzystania zasobów, ograniczenia ilości zbędnych odpadów przy jednoczesnym podwyższeniu jekości życia.</p>
         </div>
       </div>
+      <div class="sectionBreak"></div>
       <div id="prasa" class="row section-anchor">
         <div class="small-12 medium-5 columns text-center medium-offset-1">
           <button class="button radius with-icon"><i class="folder"></i><span>Pobierz materiały prasowe <br>(logo, zdjęcia, teksty)</span></button>
@@ -328,7 +360,7 @@
       </div>
     </div>
     <div class="row social-buttons">
-      <div class="column text-center"><a href="#" class="button radius with-icon fixed-size"><i class="social-facebook"></i></a><a href="#" class="button radius with-icon fixed-size"><i class="social-instagram"></i></a><a href="#" class="button radius with-icon fixed-size"><i class="envelope"></i></a></div>
+      <div class="column text-center"><a href="https://www.facebook.com/PijeWodeZKranu" class="button radius with-icon fixed-size"><i class="social-facebook"></i></a><a href="http://instagram.com/pijewodezkranu" class="button radius with-icon fixed-size"><i class="social-instagram"></i></a><a href="mailto:kontakt@pijewodezkranu.org" class="button radius with-icon fixed-size"><i class="envelope"></i></a></div>
     </div>
     <div class="waves-footer">
       <div class="row">
@@ -339,6 +371,7 @@
       </div>
       <div class="waste"></div>
     </div>
+    <script src="js/app.min.js"></script>
     <script>
       var body, navToggled, toggleNav, trigger;
 
@@ -366,6 +399,79 @@
         navLink = mobileNavElements[_i];
         navLink.onclick = toggleNav
       }
+
+      //- Podświetlanie menu
+      function highlightMenu(menuId) {
+      	//- console.log('Podświetlanie menu id: ' + menuId);
+      	document.getElementById(menuId).focus();
+      }
+      //- function createMenu(sectionId, menuId) {
+      var getWater = new Waypoint({
+        element: document.getElementById("tudostanieszwodezkranu"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('mainMenu')
+          } else {
+          	highlightMenu('tudostanieszwodezkranuMenu')
+          }
+        },
+        offset: 10
+      })
+      var truthsAndMyths = new Waypoint({
+        element: document.getElementById("prawdyimity"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('tudostanieszwodezkranuMenu')
+          } else {
+          	highlightMenu('prawdyimityMenu')
+          }
+        },
+        offset: 150
+      })
+      var howToSupport = new Waypoint({
+        element: document.getElementById("wesprzyj"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('prawdyimityMenu')
+          } else {
+          	highlightMenu('wesprzyjMenu')
+          }
+        },
+        offset: 100
+      })
+      var partners = new Waypoint({
+        element: document.getElementById("partnerzy"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('wesprzyjMenu')
+          } else {
+          	highlightMenu('partnerzyMenu')
+          }
+        },
+        offset: 100
+      })
+      var about = new Waypoint({
+        element: document.getElementById("onas"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('partnerzyMenu')
+          } else {
+          	highlightMenu('onasMenu')
+          }
+        },
+        offset: 50
+      })
+      var media = new Waypoint({
+        element: document.getElementById("prasa"),
+        handler: function(direction) {
+          if(direction == "up") {
+          	highlightMenu('onasMenu')
+          } else {
+          	highlightMenu('prasaMenu')
+          }
+        },
+        offset: 50
+      })
     </script>
   </body>
 </html>

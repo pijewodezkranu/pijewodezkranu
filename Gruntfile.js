@@ -109,6 +109,7 @@ module.exports = function(grunt) {
 
 		usemin: {
 			html: ['<%= dist %>/**/*.html', '!<%= app %>/bower_components/**'],
+			js: ['<%= dist %>/js/app.min.js', '!<%= app %>/js/*.js'],
 			css: ['<%= dist %>/css/**/*.css'],
 			options: {
 				dirs: ['<%= dist %>']
@@ -202,6 +203,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
 
-	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'uncss:dist', 'clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'uncss:dist', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };
