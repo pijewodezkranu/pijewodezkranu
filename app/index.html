@@ -75,8 +75,25 @@
       <div class="row">
         <div class="small-12 medium-10 columns small-centered">
           <div id="fb-root"></div>
+          <script>
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '1560383574236987',
+                xfbml      : true,
+                version    : 'v2.1'
+              });
+            };
+            
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&appId=1560383574236987&version=v2.0";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+          </script>
           <div data-href="https://www.facebook.com/PijeWodeZKranu" data-width="900" data-layout="standard" data-action="like" data-show-faces="true" data-share="false" class="fb-like"></div>
-          <p class="black">Piję wodę z kranu to społeczna inicjatywa promująca ideę zrównoważonego rozwoju. Zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną, co jest nieekologiczne, nieekonomiczne i niepraktyczne.</p>
+          <p style="margin-top: 25px" class="black">Piję wodę z kranu to społeczna inicjatywa promująca ideę zrównoważonego rozwoju. Zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną, co jest nieekologiczne, nieekonomiczne i niepraktyczne.</p>
         </div>
       </div>
       <div id="mainPageSection" class="row">
@@ -378,26 +395,10 @@
       <div class="waste"></div>
     </div>
     <!-- build:js js/app.min.js-->
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/noframework.waypoints.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/smooth-scroll/smooth-scroll.js"></script>
+    <script src="js/waypoints/lib/noframework.waypoints.js"></script>
     <!-- endbuild-->
     <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1560383574236987',
-          xfbml      : true,
-          version    : 'v2.1'
-        });
-      };
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      
-      
       var body, navToggled, toggleNav, trigger;
       
       navToggled = false;

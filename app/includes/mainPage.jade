@@ -8,8 +8,24 @@
 .row
   .small-12.medium-10.columns.small-centered
     div(id="fb-root")
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1560383574236987',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&appId=1560383574236987&version=v2.0";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
     .fb-like(data-href="https://www.facebook.com/PijeWodeZKranu" data-width="900" data-layout="standard" data-action="like" data-show-faces="true" data-share="false")
-    p.black Piję wodę z kranu to społeczna inicjatywa promująca ideę zrównoważonego rozwoju. Zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną, co jest nieekologiczne, nieekonomiczne i niepraktyczne.
+    p.black(style="margin-top: 25px") Piję wodę z kranu to społeczna inicjatywa promująca ideę zrównoważonego rozwoju. Zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną, co jest nieekologiczne, nieekonomiczne i niepraktyczne.
 
 .row#mainPageSection
   .small-12.medium-6.columns.small-centered
