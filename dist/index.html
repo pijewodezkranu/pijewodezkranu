@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="pl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piję Wodę z Kranu</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#2376d1">
     <!-- bower:css-->
     <!-- endbower-->
     <!-- endbuild-->
     <link rel="stylesheet" href="css/app.min.css">
+    
+    <script src="js/vendor/modernizr.min.js"></script>
     <style>
-      body.mobile-nav--show .mobile-nav__trigger span{background:none !important}.mobile-nav--show .mobile-nav__trigger span:before,.mobile-nav--show .mobile-nav__trigger span:after{top:0}.mobile-nav--show .mobile-nav__trigger span:before{transform:rotate3d(0, 0, 1, 45deg); -webkit-transform:rotate3d(0, 0, 1, 45deg)}.mobile-nav--show .mobile-nav__trigger span:after{transform:rotate3d(0, 0, 1, -45deg); -webkit-transform:rotate3d(0, 0, 1, -45deg)}.mobile-nav--show .mobile-nav{transform:translateX(0);-webkit-transform:translateX(0)}.mobile-nav--show .mobile-nav li{opacity:1;transform:translateX(0); -webkit-transform:translateX(0)}
+      <body class="mobile-nav--show">.mobile-nav__trigger span{background:none !important}.mobile-nav--show .mobile-nav__trigger span:before,.mobile-nav--show .mobile-nav__trigger span:after{top:0}.mobile-nav--show .mobile-nav__trigger span:before{transform:rotate3d(0, 0, 1, 45deg)}.mobile-nav--show .mobile-nav__trigger span:after{transform:rotate3d(0, 0, 1, -45deg)}.mobile-nav--show .mobile-nav{transform:translateX(0)}.mobile-nav--show .mobile-nav li{opacity:1;transform:translateX(0)}</body>
     </style>
   </head>
   <body>
@@ -55,14 +75,6 @@
         <div class="small-12 medium-10 columns small-centered">
           <div id="fb-root"></div>
           <script>
-            window.fbAsyncInit = function() {
-              FB.init({
-                appId      : '1560383574236987',
-                xfbml      : true,
-                version    : 'v2.1'
-              });
-            };
-
             (function(d, s, id){
                var js, fjs = d.getElementsByTagName(s)[0];
                if (d.getElementById(id)) {return;}
@@ -77,7 +89,7 @@
       </div>
       <div id="mainPageSection" class="row">
         <div class="small-12 medium-6 columns small-centered">
-          <blockquote class="quote">Piję wodę z kranu, bo jest bardzo dobrej jakości, bo jest znacznie tańsza od butelkowej, kupowanej w sklepie oraz dlatego, że czuję się odpowiedzialny za przyrodę wokół mnie.
+          <blockquote class="quote big-quote">Piję wodę z kranu, bo jest bardzo dobrej jakości, bo jest znacznie tańsza od butelkowej, kupowanej w sklepie oraz dlatego, że czuję się odpowiedzialny za przyrodę wokół mnie.
             <cite class="cite-with-portrait"><img src="images/stanislaw-czachorowski.png" class="cite-portrait-large">
               <div class="cite-author"><span>Prof. UWM dr hab. Stanisław Czachorowski</span><span class="cite-location">Wydział Biologii i Biotechnologii<br>UWM w Olsztynie</span></div>
             </cite>
@@ -174,9 +186,9 @@
         </div>
         <div class="columns small-12 medium-5 end">
           <p class="italic bold">Najciekawsze źródła o wodzie z kranu:</p>
-          <iframe width="100%" src="https://www.youtube.com/embed/uL9kyYQ7Tfs" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          <iframe width="100%" style="height: 250px" src="https://www.youtube.com/embed/uL9kyYQ7Tfs" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
           <p>Co się czai w wodzie z kranu? | Polimaty</p>
-          <iframe width="100%" src="https://www.youtube.com/embed/Se12y9hSOM0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          <iframe width="100%" style="height: 250px" src="https://www.youtube.com/embed/Se12y9hSOM0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
           <p>Krótka historia wody butelkowanej</p>
         </div>
       </div>
@@ -256,8 +268,8 @@
         </div>
       </div>
       <div class="row partners small-text-center">
-        <div class="small-12 text-center"><img src="images/equa.png" class="cite-portrait-large">
-        </div>
+        <div class="small-12 medium-6 columns medium-text-right"><img src="images/zawodniacy.png" class="cite-portrait-large"></div>
+        <div class="small-12 medium-6 columns medium-text-left"><img src="images/equa.png" class="cite-portrait-large"></div>
       </div>
       <div class="row">
         <div class="small-12 medium-4 small-centered columns text-center">
@@ -266,7 +278,7 @@
       </div>
       <div class="row partners small-text-center">
         <div class="small-12 medium-6 columns medium-text-right"><img src="images/kierunek_wodkan_pion.png" class="cite-portrait-large"></div>
-        <div class="small-12 medium-6 columns medium-text-left"><img src="images/ulica-ekologiczna-logo-2.png" class="cite-portrait-large"></div>
+        <div class="small-12 medium-6 columns"><img src="images/ulica-ekologiczna-logo-2.png" class="cite-portrait-large"></div>
       </div>
       <div class="row">
         <div class="columns small-12 medium-10 small-centered">
@@ -360,7 +372,9 @@
       </div>
     </div>
     <div class="row social-buttons">
-      <div class="column text-center"><a href="https://www.facebook.com/PijeWodeZKranu" class="button radius with-icon fixed-size"><i class="social-facebook"></i></a><a href="http://instagram.com/pijewodezkranu" class="button radius with-icon fixed-size"><i class="social-instagram"></i></a><a href="mailto:kontakt@pijewodezkranu.org" class="button radius with-icon fixed-size"><i class="envelope"></i></a></div>
+      <div class="column small-12 medium-4 text-center"><a href="https://www.facebook.com/PijeWodeZKranu" class="button radius with-icon fixed-size"><i class="social-facebook"></i></a></div>
+      <div class="column small-12 medium-4 text-center"><a href="http://instagram.com/pijewodezkranu" class="button radius with-icon fixed-size"><i class="social-instagram"></i></a></div>
+      <div class="column small-12 medium-4 text-center"><a href="mailto:kontakt@pijewodezkranu.org" class="button radius with-icon fixed-size"><i class="envelope"></i></a></div>
     </div>
     <div class="waves-footer">
       <div class="row">
@@ -374,15 +388,15 @@
     <script src="js/app.min.js"></script>
     <script>
       var body, navToggled, toggleNav, trigger;
-
+      
       navToggled = false;
-
+      
       body = document.getElementsByTagName('body')[0];
-
+      
       mobileNavElements = document.getElementsByClassName('mobile-nav__element');
-
+      
       trigger = document.getElementById('mobile-nav__trigger');
-
+      
       toggleNav = function() {
         navToggled = !navToggled;
         if (navToggled === true) {
@@ -391,15 +405,15 @@
           return body.className = '';
         }
       };
-
-
+      
+      
       trigger.onclick = toggleNav;
-
+      
       for (_i = 0, _len = mobileNavElements.length; _i < _len; _i++) {
         navLink = mobileNavElements[_i];
         navLink.onclick = toggleNav
       }
-
+      
       //- Podświetlanie menu
       function highlightMenu(menuId) {
       	//- console.log('Podświetlanie menu id: ' + menuId);

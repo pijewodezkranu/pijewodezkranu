@@ -3,9 +3,10 @@
 @import modules/nav
 
 
-$button-border-color: #D9E7F1
+$button-border-color: #D9E7F1w
 
-body
+html, body
+  overflow-x: hidden
   color: black
   font-family: Lato
   font-weight: 300
@@ -352,7 +353,6 @@ a.with-icon
 
 iframe
   background: none
-  height: 250px
 
 // How to support
 .how-to-help
@@ -376,6 +376,7 @@ iframe
   background-repeat: no-repeat
   background-position: top left
   min-height: 450px
+  margin-top: 15px
 
 
 
@@ -444,7 +445,7 @@ iframe
   width: rem-calc(80px)
   height: rem-calc(70px)
   padding: rem-calc(14px) !important
-  margin: 0 10px
+  margin: 10px
 
 
 .waves-footer
@@ -473,9 +474,9 @@ iframe
 
 .waste
   background-image: url('../images/waste.png')
-  background-position: bottom -35px center
+  background-position: top 30px center
   background-repeat: no-repeat
-  background-size: contain
+  background-size: cover
   position: absolute
   bottom: 0
   width: 100%
@@ -484,6 +485,11 @@ iframe
 
 .quote.no-author:before
   content: none
+
+blockquote.quote.big-quote
+  font-size: rem-calc(22px)
+  color: #272727
+  line-height: rem-calc(30px)
 
 @media #{$small-only}
 
