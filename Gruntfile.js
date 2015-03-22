@@ -189,9 +189,19 @@ module.exports = function(grunt) {
 		      ext: '.min.css'
 		    }]
 		  }
-		}
+		},
+		autoprefixer: {
+	    options: {
+	      browsers: ['last 2 versions', 'ie 8', 'ie 9']
+	    },
+	    single_file: {
+	    	src: '<%= dist %>/css/1app.min.css',
+	    	dest: '<%= dist %>/css/app.min.css'
+	    }
+	  },
 
 	});
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-uncss');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.registerTask('compile-jade', ['jade']);
