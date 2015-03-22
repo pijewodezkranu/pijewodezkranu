@@ -173,14 +173,15 @@
         vertical-align: middle
         border: 1px solid #E6F0F6
         border-radius: 4px
-        transition: border-color .1s ease
+        transition: all .1s ease
         color: $secondary-color
         font-size: rem-calc(13px)
 
-        &:hover, &:focus
+        &:hover, &:focus, &.menu-active
           outline: none
           border-color: $primary-color
-
+          background: $primary-color
+          color: white
 
         &.smallDrop
           line-height: rem-calc(24px)
