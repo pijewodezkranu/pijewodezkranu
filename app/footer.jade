@@ -1,122 +1,25 @@
 
 .row.social-buttons
-	.column.small-12.medium-4.text-center
-		a.button.radius.with-icon.fixed-size(href="https://www.facebook.com/PijeWodeZKranu")
-			i.social-facebook
-	.column.small-12.medium-4.text-center
-		a.button.radius.with-icon.fixed-size(href="http://instagram.com/pijewodezkranu")
-			i.social-instagram
-	.column.small-12.medium-4.text-center
-		a.button.radius.with-icon.fixed-size(href="mailto:kontakt@pijewodezkranu.org")
-			i.envelope
+  .column.small-12.medium-4.text-center
+    a.button.radius.with-icon.fixed-size(href="https://www.facebook.com/PijeWodeZKranu")
+      i.social-facebook
+  .column.small-12.medium-4.text-center
+    a.button.radius.with-icon.fixed-size(href="http://instagram.com/pijewodezkranu")
+      i.social-instagram
+  .column.small-12.medium-4.text-center
+    a.button.radius.with-icon.fixed-size(href="mailto:kontakt@pijewodezkranu.org")
+      i.envelope
 
 .waves-footer
-	.row
-		.small-12.columns.text-center
-			p Akcję Piję wodę z kranu prowadzi fundacja Czyściutko (KRS 0000536142)
-			p © 2015 Fundacja Czyściutko
-	.waste
+  .row
+    .small-12.columns.text-center
+      p Akcję Piję wodę z kranu prowadzi fundacja Czyściutko (KRS 0000536142)
+      p © 2015 Fundacja Czyściutko
+  .waste
 
-//- script(src="js/smooth-scroll.min.js")
-//- script(src="js/noframework.waypoints.min.js")
-script(src="js/app.min.js")
-script.
-	var body, navToggled, toggleNav, trigger;
-
-	navToggled = false;
-
-	body = document.getElementsByTagName('body')[0];
-
-	mobileNavElements = document.getElementsByClassName('mobile-nav__element');
-
-	trigger = document.getElementById('mobile-nav__trigger');
-
-	toggleNav = function() {
-	  navToggled = !navToggled;
-	  if (navToggled === true) {
-	    return body.className = 'mobile-nav--show';
-	  } else {
-	    return body.className = '';
-	  }
-	};
-
-
-	trigger.onclick = toggleNav;
-
-	for (_i = 0, _len = mobileNavElements.length; _i < _len; _i++) {
-	  navLink = mobileNavElements[_i];
-	  navLink.onclick = toggleNav
-	}
-
-	//- Podświetlanie menu
-	function highlightMenu(menuId) {
-		//- console.log('Podświetlanie menu id: ' + menuId);
-		document.getElementById(menuId).focus();
-	}
-	//- function createMenu(sectionId, menuId) {
-	var getWater = new Waypoint({
-	  element: document.getElementById("tudostanieszwodezkranu"),
-	  handler: function(direction) {
-	    if(direction == "up") {
-	    	highlightMenu('mainMenu')
-	    } else {
-	    	highlightMenu('tudostanieszwodezkranuMenu')
-	    }
-	  },
-	  offset: 10
-	})
-	var truthsAndMyths = new Waypoint({
-	  element: document.getElementById("prawdyimity"),
-	  handler: function(direction) {
-	    if(direction == "up") {
-	    	highlightMenu('tudostanieszwodezkranuMenu')
-	    } else {
-	    	highlightMenu('prawdyimityMenu')
-	    }
-	  },
-	  offset: 150
-	})
-	var howToSupport = new Waypoint({
-	  element: document.getElementById("wesprzyj"),
-	  handler: function(direction) {
-	    if(direction == "up") {
-	    	highlightMenu('prawdyimityMenu')
-	    } else {
-	    	highlightMenu('wesprzyjMenu')
-	    }
-	  },
-	  offset: 100
-	})
-	var partners = new Waypoint({
-	  element: document.getElementById("partnerzy"),
-	  handler: function(direction) {
-	    if(direction == "up") {
-	    	highlightMenu('wesprzyjMenu')
-	    } else {
-	    	highlightMenu('partnerzyMenu')
-	    }
-	  },
-	  offset: 100
-	})
-	var about = new Waypoint({
-	  element: document.getElementById("onas"),
-	  handler: function(direction) {
-	    if(direction == "up") {
-	    	highlightMenu('partnerzyMenu')
-	    } else {
-	    	highlightMenu('onasMenu')
-	    }
-	  },
-	  offset: 50
-	})
-	var media = new Waypoint({
-	  element: document.getElementById("prasa"),
-	  handler: function(direction) {
-	    if(direction == "up") {
-	    	highlightMenu('onasMenu')
-	    } else {
-	    	highlightMenu('prasaMenu')
-	    }
-	  },
-	  offset: 50
-	})
+//- script(src="js/app.min.js")
+// build:js js/app.min.js
+script(src="js/smooth-scroll.js")
+script(src="js/noframework.waypoints.js")
+script(src="js/app.js")
+// endbuild

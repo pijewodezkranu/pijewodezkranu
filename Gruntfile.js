@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: '<%= app %>/',
-					src: ['**/*.jade', '!**/header.jade', '!**/footer.jade'],
+					src: ['**/*.jade', '!**/header.jade', '!**/footer.jade', '!includes/*.jade'],
 					ext: '.html',
 					dest: '<%= app %>/'
 				}]
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd:'<%= app %>/',
-					src: ['fonts/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
+					src: ['fonts/**', '**/*.html', '!**/*.scss', '!bower_components/**', '*.png', '*.xml', '*.ico', '*.json'],
 					dest: '<%= dist %>/'
 				}]
 			},
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
 	      browsers: ['last 2 versions', 'ie 8', 'ie 9']
 	    },
 	    single_file: {
-	    	src: '<%= dist %>/css/1app.min.css',
+	    	src: '<%= dist %>/css/app.min.css',
 	    	dest: '<%= dist %>/css/app.min.css'
 	    }
 	  },
@@ -213,6 +213,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
 
-	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'uncss:dist', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
+	grunt.registerTask('publish', ['compile-jade', 'compile-sass', 'uncss:dist', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin', 'autoprefixer']);
 
 };
