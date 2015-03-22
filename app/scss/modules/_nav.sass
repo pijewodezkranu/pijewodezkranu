@@ -177,7 +177,10 @@
         color: $secondary-color
         font-size: rem-calc(13px)
 
-        &:hover, &:focus, &.menu-active
+        &:hover
+          border-color: $primary-color
+
+        &:focus, &.menu-active
           outline: none
           border-color: $primary-color
           background: $primary-color
@@ -193,6 +196,12 @@
             height: 24px
             padding-right: 5px
             content: url('../images/small-drop.png')
+
+        &.smallDrop.menu-active,
+        &.smallDrop:focus
+
+          &:before
+            content: url('../images/small-drop-white.png')
 
 @media #{$large-up}
   .main-nav
