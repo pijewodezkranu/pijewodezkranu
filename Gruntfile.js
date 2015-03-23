@@ -161,6 +161,9 @@ module.exports = function(grunt) {
 
 		uncss: {
 		  dist: {
+  	    options: {
+		      ignore: ['.menu-active', '.mobile-nav--show']
+		    },
 		    files: {
 		      'app/css/app.css': ['app/index.html']
 		    }
