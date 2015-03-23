@@ -53,20 +53,39 @@ script.
     navLink.onclick = toggleNav
   }
 
+  var tudostanieszwodezkranuMenuElement = document.getElementById("tudostanieszwodezkranuMenu");
+  var prawdyimityMenuElement = document.getElementById("prawdyimityMenu");
+  var wesprzyjMenuElement = document.getElementById("wesprzyjMenu");
+  var partnerzyMenuElement = document.getElementById("partnerzyMenu");
+  var onasMenuElement = document.getElementById("onasMenu");
+  var prasaMenuElement = document.getElementById("prasaMenu");
+
+
   //- Podświetlanie menu
-  function highlightMenu(menuId) {
-    //- console.log('Podświetlanie menu id: ' + menuId);
-    document.getElementById(menuId).focus();
-    //- TODO Dodać klasę .menu-active do tego elementu i usunąć z wszystkich innych w nawigacji
+  function highlightMenu(element) {
+    console.log('Podświetlanie menu id: ' + element);
+    clearMenuHighLighting();
+    element.className = element.className + ' menu-active';
+  }
+  function removeMenuElementClass(elementVar) {
+  	elementVar.className = elementVar.className.replace(/\bmenu-active\b/,'');
+  }
+  function clearMenuHighLighting() {
+  	removeMenuElementClass(tudostanieszwodezkranuMenuElement);
+  	removeMenuElementClass(prawdyimityMenuElement);
+  	removeMenuElementClass(wesprzyjMenuElement);
+  	removeMenuElementClass(partnerzyMenuElement);
+  	removeMenuElementClass(onasMenuElement);
+  	removeMenuElementClass(prasaMenuElement);
   }
   //- function createMenu(sectionId, menuId) {
   var getWater = new Waypoint({
     element: document.getElementById("tudostanieszwodezkranu"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu('mainMenu')
+        clearMenuHighLighting()
       } else {
-        highlightMenu('tudostanieszwodezkranuMenu')
+        highlightMenu(tudostanieszwodezkranuMenuElement)
       }
     },
     offset: 10
@@ -75,9 +94,9 @@ script.
     element: document.getElementById("prawdyimity"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu('tudostanieszwodezkranuMenu')
+        highlightMenu(tudostanieszwodezkranuMenuElement)
       } else {
-        highlightMenu('prawdyimityMenu')
+        highlightMenu(prawdyimityMenuElement)
       }
     },
     offset: 150
@@ -86,9 +105,9 @@ script.
     element: document.getElementById("wesprzyj"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu('prawdyimityMenu')
+        highlightMenu(prawdyimityMenuElement)
       } else {
-        highlightMenu('wesprzyjMenu')
+        highlightMenu(wesprzyjMenuElement)
       }
     },
     offset: 100
@@ -97,9 +116,9 @@ script.
     element: document.getElementById("partnerzy"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu('wesprzyjMenu')
+        highlightMenu(wesprzyjMenuElement)
       } else {
-        highlightMenu('partnerzyMenu')
+        highlightMenu(partnerzyMenuElement)
       }
     },
     offset: 100
@@ -108,9 +127,9 @@ script.
     element: document.getElementById("onas"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu('partnerzyMenu')
+        highlightMenu(partnerzyMenuElement)
       } else {
-        highlightMenu('onasMenu')
+        highlightMenu(onasMenuElement)
       }
     },
     offset: 50
@@ -119,9 +138,9 @@ script.
     element: document.getElementById("prasa"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu('onasMenu')
+        highlightMenu(onasMenuElement)
       } else {
-        highlightMenu('prasaMenu')
+        highlightMenu(prasaMenuElement)
       }
     },
     offset: 50
