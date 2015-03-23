@@ -440,7 +440,7 @@
         element.className = element.className + ' menu-active';
       }
       function removeMenuElementClass(elementVar) {
-      	elementVar.className = elementVar.className.replace(/\bmenu-active\b/,'');
+      	elementVar.className = elementVar.className.replace(/\s*\bmenu-active\b/,'');
       }
       function clearMenuHighLighting() {
       	removeMenuElementClass(tudostanieszwodezkranuMenuElement);
