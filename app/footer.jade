@@ -53,6 +53,7 @@ script.
     navLink.onclick = toggleNav
   }
 
+  //- Podświetlanie menu
   var tudostanieszwodezkranuMenuElement = document.getElementById("tudostanieszwodezkranuMenu");
   var prawdyimityMenuElement = document.getElementById("prawdyimityMenu");
   var wesprzyjMenuElement = document.getElementById("wesprzyjMenu");
@@ -60,9 +61,8 @@ script.
   var onasMenuElement = document.getElementById("onasMenu");
   var prasaMenuElement = document.getElementById("prasaMenu");
 
-
-  //- Podświetlanie menu
   function highlightMenu(element) {
+    //- console.log('Podświetlanie menu id: ' + element);
     clearMenuHighLighting();
     element.className = element.className + ' menu-active';
   }
@@ -77,7 +77,6 @@ script.
   	removeMenuElementClass(onasMenuElement);
   	removeMenuElementClass(prasaMenuElement);
   }
-  //- function createMenu(sectionId, menuId) {
   var getWater = new Waypoint({
     element: document.getElementById("tudostanieszwodezkranu"),
     handler: function(direction) {

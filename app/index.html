@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="./images/og_pijewodezkranu_logo.png">
     <title>Piję wodę z kranu</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -23,6 +22,9 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#2376d1">
+    <meta property="og:image" content="./images/og_pijewodezkranu_logo.png">
+    <meta property="og:title" content="Piję wodę z kranu">
+    <meta property="og:description" content="Piję wodę z kranu to społeczna inicjatywa, która zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną.">
     <!-- build:css css/app.min.css-->
     <link rel="stylesheet" href="css/app.css">
     <!-- endbuild-->
@@ -62,7 +64,7 @@
           <h1 class="question dash">Czy w polskich miastach można pić wodę z kranu bez przegotowania?</h1>
           <h1 class="blueBold">Tak!</h1>
           <p class="blue">
-            Jakość wody wodociągowej określa Polskie prawo oraz regulacje Unii Europejskiej.
+            Jakość wody wodociągowej określa polskie prawo oraz regulacje Unii Europejskiej.
             Woda z kranu w&nbsp;Londynie, Paryżu i Warszawie spełnia te same wymagania!
           </p>
         </div>
@@ -420,6 +422,7 @@
         navLink.onclick = toggleNav
       }
       
+      //- Podświetlanie menu
       var tudostanieszwodezkranuMenuElement = document.getElementById("tudostanieszwodezkranuMenu");
       var prawdyimityMenuElement = document.getElementById("prawdyimityMenu");
       var wesprzyjMenuElement = document.getElementById("wesprzyjMenu");
@@ -427,9 +430,8 @@
       var onasMenuElement = document.getElementById("onasMenu");
       var prasaMenuElement = document.getElementById("prasaMenu");
       
-      
-      //- Podświetlanie menu
       function highlightMenu(element) {
+        //- console.log('Podświetlanie menu id: ' + element);
         clearMenuHighLighting();
         element.className = element.className + ' menu-active';
       }
@@ -444,7 +446,6 @@
       	removeMenuElementClass(onasMenuElement);
       	removeMenuElementClass(prasaMenuElement);
       }
-      //- function createMenu(sectionId, menuId) {
       var getWater = new Waypoint({
         element: document.getElementById("tudostanieszwodezkranu"),
         handler: function(direction) {
