@@ -86,8 +86,11 @@ h1
     font-weight: 100;
     margin-bottom: rem-calc(8px)
     font-style: normal
-    font-size: 4rem
+    font-size: 2.5rem
     text-align: center
+
+    @media #{$medium-up}
+      font-size: 4rem
 
 .bold
   font-weight: 900
@@ -388,12 +391,23 @@ button.animated-hover
     font-size: rem-calc(20px)
     color: $secondary-color
 
+  @media #{$small-only}
+
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      z-index: 4
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+
+  iframe
+
 iframe
   background: none
-  pointer-events: none
 
-  @media #{$medium-up}
-    pointer-events: initial
 
 // How to support
 .how-to-help
