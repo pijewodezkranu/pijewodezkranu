@@ -288,6 +288,9 @@ a.with-icon
     height: rem-calc(40px)
     width: rem-calc(20px)
 
+.no-margin-top.button.with-icon--vertical
+    margin-top: 0px
+
 .button.with-icon--vertical
   background: none
   overflow: hidden
@@ -317,6 +320,18 @@ a.with-icon
       width: 56px
       height: 51px
       display: block
+
+  i.facebook-share
+
+    &:before
+      background: url('../images/social-facebook-blue.png')
+      width: 46px
+      height: 84px
+
+    &:hover
+
+      &:before
+        background: url('../images/social-facebook.png')
 
   span
     display: block
