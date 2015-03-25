@@ -143,3 +143,21 @@ script.
     },
     offset: 50
   })
+
+
+  // Map
+  var mapElement = document.getElementById('map-one');
+  L.mapbox.accessToken = 'pk.eyJ1IjoicGlqZXdvZGV6a3JhbnUiLCJhIjoiOHlHZUtxQSJ9.bzfI7E6aGTFl-Rm_O5ZIrw';
+  var map = L.mapbox.map(mapElement, 'pijewodezkranu.j4e8dmme', {
+    zoomControl: false
+  });
+
+  // Disable drag and zoom handlers.
+  map.dragging.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+
+  // Disable tap handler, if present.
+  if (map.tap) map.tap.disable();
+  mapElement.style.position = 'initial';

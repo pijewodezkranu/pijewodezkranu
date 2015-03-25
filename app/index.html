@@ -25,6 +25,8 @@
     <meta property="og:image" content="http://www.pijewodezkranu.org/images/og_pijewodezkranu_logo.png">
     <meta property="og:title" content="Piję wodę z kranu">
     <meta property="og:description" content="Piję wodę z kranu to społeczna inicjatywa, która zrodziła się z pytania o to dlaczego w kraju, w którym prawie każdy ma bezpośredni dostęp do wysokiej jakości wody w domu, wciąż kupuje się wodę butelkowaną.">
+    <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js"></script>
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css">
     <!-- build:css css/app.min.css-->
     <link rel="stylesheet" href="css/app.css">
     <!-- endbuild-->
@@ -124,7 +126,7 @@
         </div>
       </section>
       <section class="map">
-        <iframe width="100%" height="500px" frameborder="0" src="https://a.tiles.mapbox.com/v4/pijewodezkranu.j4e8dmme/attribution,zoompan,geocoder,share.html?access_token=pk.eyJ1IjoicGlqZXdvZGV6a3JhbnUiLCJhIjoiOHlHZUtxQSJ9.bzfI7E6aGTFl-Rm_O5ZIrw"></iframe>
+        <div id="map-one" width="100%" height="500px" frameborder="0" position="initial"></div>
         <div class="row loading">
           <div class="small-12 text-center columns">
             <p>Ładuję mapę</p>
@@ -511,6 +513,24 @@
         },
         offset: 50
       })
+      
+      
+      // Map
+      var mapElement = document.getElementById('map-one');
+      L.mapbox.accessToken = 'pk.eyJ1IjoicGlqZXdvZGV6a3JhbnUiLCJhIjoiOHlHZUtxQSJ9.bzfI7E6aGTFl-Rm_O5ZIrw';
+      var map = L.mapbox.map(mapElement, 'pijewodezkranu.j4e8dmme', {
+        zoomControl: false
+      });
+      
+      // Disable drag and zoom handlers.
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
+      
+      // Disable tap handler, if present.
+      if (map.tap) map.tap.disable();
+      mapElement.style.position = 'initial';
     </script>
   </body>
 </html>
