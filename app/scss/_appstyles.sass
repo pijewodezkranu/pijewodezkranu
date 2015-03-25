@@ -80,14 +80,14 @@ h1
       position: absolute
       left: -30px
       top: -5px
-      
+
   &.section
     color:#444;
     font-weight: 100;
-    margin-bottom: .5em;
-    font-style: normal;
-    font-size: 4rem;
-    text-align: center;
+    margin-bottom: rem-calc(8px)
+    font-style: normal
+    font-size: 4rem
+    text-align: center
 
 .bold
   font-weight: 900
@@ -283,9 +283,10 @@ a.with-icon
 
   i.social-facebook
     background-image: url('../images/social-facebook.png')
-    background-position: center center
+    background-position: center bottom 2px
     background-repeat: no-repeat
-    background-size: contain
+    background-size: cover
+    transition: all .2s ease-in-out
     height: rem-calc(40px)
     width: rem-calc(20px)
 
@@ -293,11 +294,6 @@ a.with-icon
     margin-top: 0px
 
 .button.with-icon--vertical
-  background: none
-  overflow: hidden
-  color: $body-font-color
-  transition: color .2s ease
-  border: 1px solid $primary-color
   padding: 12px 54px
   z-index: 19
   position: relative
@@ -308,34 +304,44 @@ a.with-icon
     margin-top: 0
     display: inline-block
 
-  i
-    display: block
-    margin-bottom: 10px
-
-    &:before
-      content: ""
-      background: url('../images/heart.png')
-      background-size: contain
-      background-position: center center
-      margin: 0 auto
-      width: 56px
-      height: 51px
-      display: block
-
-  i.facebook-share
-
-    &:before
-      background: url('../images/social-facebook-blue.png')
-      width: 46px
-      height: 84px
-
-    &:hover
-
-      &:before
-        background: url('../images/social-facebook.png')
-
   span
     display: block
+
+i.heart
+  display: block
+  margin-bottom: 10px
+
+  &:before
+    content: ""
+    background: url('../images/heart.png')
+    background-size: contain
+    background-position: center center
+    margin: 0 auto
+    width: 56px
+    height: 51px
+    display: block
+
+// TODO Delete if not neccessary
+// i.facebook-share
+
+//   &:before
+//     background: url('../images/social-facebook-blue.png')
+//     width: 46px
+//     height: 84px
+
+//   &:hover
+
+//     &:before
+//       background: url('../images/social-facebook.png')
+
+.button.animated-hover,
+button.animated-hover
+  transition: color .2s ease
+  border: 1px solid $primary-color
+  background: none
+  color: $body-font-color
+  overflow: hidden
+  background: none
 
   &:before
     content: ""
@@ -353,12 +359,18 @@ a.with-icon
     z-index: -1
     transition: all .2s ease-in-out
 
+  i.social-facebook
+    background-position: center bottom rem-calc(-57px)
+
   &:hover
     color: #fff
 
     &:before
       height: 400px
       width: 400px
+
+    i.social-facebook
+      background-position: center bottom rem-calc(2px)
 
 // Page 3
 .map
@@ -378,6 +390,10 @@ a.with-icon
 
 iframe
   background: none
+  pointer-events: none
+
+  @media #{$medium-up}
+    pointer-events: initial
 
 // How to support
 .how-to-help
@@ -526,8 +542,9 @@ blockquote.quote.big-quote
   &:before
     color: #636363
 
-  cite
-    padding-left: 20%
+  @media #{$medium-up}
+    cite
+      padding-left: 20%
 
 @media #{$small-only}
 
