@@ -1,8 +1,9 @@
 node_modules
 .tmp
 app/bower_components
+app/index.html
 .sass-cache
 /.project
 dist
 /kranowa.sublime-project
-/kranowa.sublime-workspace
+/kranowa.sublime-workspacew
