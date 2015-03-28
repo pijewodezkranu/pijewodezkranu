@@ -246,24 +246,29 @@ a.with-icon
     vertical-align: middle
 
   i.folder
-    background-image: url('../images/folder.svg')
+    background-image: url('../images/folder-sprite.png')
+    background-repeat: no-repeat
+    background-position: center bottom rem-calc(4px)
+    background-size: rem-calc(40px)
+    height: rem-calc(40px)
+    width: rem-calc(40px)
+
+  i.envelope
+    background-image: url('../images/envelope.svg')
     background-repeat: no-repeat
     background-position: center center
     background-size: contain
     height: rem-calc(40px)
     width: rem-calc(40px)
 
-  i.envelope
-    background-image: url('../images/envelope.svg')
+  i.envelope-sprite
+    background-image: url('../images/envelope-sprite.png')
     background-repeat: repeat-x
-    background-position: left 0px center
-    background-size: contain
+    background-position: left rem-calc(4px) center
+    background-size: rem-calc(80px)
     height: rem-calc(40px)
     width: rem-calc(40px)
     transition: all .2s ease-in-out
-
-  &:hover i.envelope
-    background-position: left 40px center
 
   i.social-instagram
     background-image: url('../images/instagram.svg')
@@ -380,6 +385,12 @@ button.animated-hover
     &:before
       height: 400px
       width: 400px
+
+    i.folder
+      background-position: center bottom rem-calc(-50px)
+
+    i.envelope-sprite
+      background-position: left rem-calc(38px) center
 
     i.social-facebook
       background-position: center bottom rem-calc(2px)
