@@ -199,8 +199,8 @@ blockquote.quote:before
   left: 0px
   top: 30px
 
-button.with-icon.hollow,
-.button.with-icon.hollow
+button.hollow,
+.button.hollow
 
   background: none
   border-radius: 11px
@@ -216,22 +216,6 @@ button.with-icon.hollow,
     margin-bottom: 10px
     text-align: center
 
-  &.clipboard
-    border: 1px solid $silver
-    width: 230px
-
-    &:before
-      height: 56px
-      content: url('../images/clipboard.png')
-
-  &.location
-    border: 1px solid $primary-color
-    width: 230px
-
-    &:before
-      height: 56px
-      content: url('../images/location.png')
-
 .refferal-marta, .refferal-maciej
   position: relative
 
@@ -243,6 +227,7 @@ button.with-icon.hollow,
       margin-left: 0
 
 .button.with-icon,
+.button.with-icon--vertical,
 button.with-icon,
 a.with-icon
   padding: 10px 18px 11px
@@ -261,10 +246,10 @@ a.with-icon
     vertical-align: middle
 
   i.folder
-    background-image: url('../images/folder.svg')
+    background-image: url('../images/folder-sprite.png')
     background-repeat: no-repeat
-    background-position: center center
-    background-size: contain
+    background-position: center bottom rem-calc(4px)
+    background-size: rem-calc(40px)
     height: rem-calc(40px)
     width: rem-calc(40px)
 
@@ -275,6 +260,15 @@ a.with-icon
     background-size: contain
     height: rem-calc(40px)
     width: rem-calc(40px)
+
+  i.envelope-sprite
+    background-image: url('../images/envelope-sprite.png')
+    background-repeat: repeat-x
+    background-position: left rem-calc(4px) center
+    background-size: rem-calc(80px)
+    height: rem-calc(40px)
+    width: rem-calc(40px)
+    transition: all .2s ease-in-out
 
   i.social-instagram
     background-image: url('../images/instagram.svg')
@@ -289,9 +283,30 @@ a.with-icon
     background-position: center bottom 2px
     background-repeat: no-repeat
     background-size: cover
-    transition: all .2s ease-in-out
     height: rem-calc(40px)
     width: rem-calc(20px)
+
+
+  i.clipboard-icon
+    display: block
+    margin: 0 auto rem-calc(10px)
+    height: rem-calc(60px)
+    width: rem-calc(40px)
+    background: url('../images/clipboard-sprite.png')
+    background-position: center bottom 2px
+    background-repeat: no-repeat
+    background-size: cover
+
+  i.location-icon
+    display: block
+    margin: 0 auto rem-calc(10px)
+    height: rem-calc(60px)
+    width: rem-calc(40px)
+    background: url('../images/location-sprite.png')
+    background-position: center bottom 2px
+    background-repeat: no-repeat
+    background-size: cover
+
 
 .no-margin-top.button.with-icon--vertical
     margin-top: 0px
@@ -299,6 +314,8 @@ a.with-icon
 .button.with-icon--vertical
   padding: 12px 54px
   z-index: 19
+  font-size: rem-calc(18px)
+  font-weight: 400
   position: relative
   margin-top: 250px
   display: inline-block
@@ -324,18 +341,6 @@ i.heart
     height: 51px
     display: block
 
-// TODO Delete if not neccessary
-// i.facebook-share
-
-//   &:before
-//     background: url('../images/social-facebook-blue.png')
-//     width: 46px
-//     height: 84px
-
-//   &:hover
-
-//     &:before
-//       background: url('../images/social-facebook.png')
 
 .button.animated-hover,
 button.animated-hover
@@ -345,6 +350,12 @@ button.animated-hover
   color: $body-font-color
   overflow: hidden
   background: none
+
+  &.green
+    border: 1px solid #7ED321
+
+    &:before
+      background: #7ED321
 
   &:before
     content: ""
@@ -362,6 +373,9 @@ button.animated-hover
     z-index: -1
     transition: all .2s ease-in-out
 
+  i
+    transition: all .2s ease-in-out
+
   i.social-facebook
     background-position: center bottom rem-calc(-57px)
 
@@ -372,8 +386,22 @@ button.animated-hover
       height: 400px
       width: 400px
 
+    i.folder
+      background-position: center bottom rem-calc(-50px)
+
+    i.envelope-sprite
+      background-position: left rem-calc(38px) center
+
     i.social-facebook
       background-position: center bottom rem-calc(2px)
+
+    i.clipboard-icon
+      background-position: center bottom rem-calc(-65px)
+
+    i.location-icon
+      background-position: center bottom rem-calc(-63px)
+
+
 
 // Page 3
 .map
