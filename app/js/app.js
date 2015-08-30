@@ -49,11 +49,22 @@ var body, navToggled, toggleNav, trigger;
     removeMenuElementClass(onasMenuElement);
     removeMenuElementClass(prasaMenuElement);
   }
+  var howToSupport = new Waypoint({
+    element: document.getElementById("wesprzyj"),
+    handler: function(direction) {
+      if(direction == "up") {
+        clearMenuHighLighting()
+      } else {
+        highlightMenu(wesprzyjMenuElement)
+      }
+    },
+    offset: 100
+  })
   var getWater = new Waypoint({
     element: document.getElementById("tudostanieszwodezkranu"),
     handler: function(direction) {
       if(direction == "up") {
-        clearMenuHighLighting()
+        highlightMenu(wesprzyjMenuElement)
       } else {
         highlightMenu(tudostanieszwodezkranuMenuElement)
       }
@@ -71,22 +82,11 @@ var body, navToggled, toggleNav, trigger;
     },
     offset: 150
   })
-  var howToSupport = new Waypoint({
-    element: document.getElementById("wesprzyj"),
-    handler: function(direction) {
-      if(direction == "up") {
-        highlightMenu(prawdyimityMenuElement)
-      } else {
-        highlightMenu(wesprzyjMenuElement)
-      }
-    },
-    offset: 100
-  })
   var partners = new Waypoint({
     element: document.getElementById("partnerzy"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu(wesprzyjMenuElement)
+        highlightMenu(prawdyimityMenuElement)
       } else {
         highlightMenu(partnerzyMenuElement)
       }
