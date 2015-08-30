@@ -14,7 +14,7 @@ html, body
   padding-top: rem-calc(60px)
 
   @media #{$medium-up}
-    padding-top: rem-calc(200px)
+    padding-top: rem-calc(100px)
 
 // Menu
 .menu
@@ -577,11 +577,14 @@ blockquote.quote.leading-quote
   font-size: rem-calc(26px)
   color: #272727
   line-height: rem-calc(32px)
-  margin-top: rem-calc(150px)
+  margin-top: rem-calc(50px)
   margin-left: rem-calc(-55px)
 
   &:before
     color: #636363
+
+  @media #{$medium-up}
+    margin-top: rem-calc(150px)
 
   @media #{$medium-up}
     cite
