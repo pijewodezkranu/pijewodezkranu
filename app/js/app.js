@@ -42,18 +42,29 @@ var body, navToggled, toggleNav, trigger;
     elementVar.className = elementVar.className.replace(/\s*\bmenu-active\b/,'');
   }
   function clearMenuHighLighting() {
-    removeMenuElementClass(tudostanieszwodezkranuMenuElement);
     removeMenuElementClass(prawdyimityMenuElement);
     removeMenuElementClass(wesprzyjMenuElement);
+    removeMenuElementClass(tudostanieszwodezkranuMenuElement);
     removeMenuElementClass(partnerzyMenuElement);
     removeMenuElementClass(onasMenuElement);
     removeMenuElementClass(prasaMenuElement);
   }
+  var truthsAndMyths = new Waypoint({
+    element: document.getElementById("prawdyimity"),
+    handler: function(direction) {
+      if(direction == "up") {
+        clearMenuHighLighting()
+      } else {
+        highlightMenu(prawdyimityMenuElement)
+      }
+    },
+    offset: 150
+  })
   var howToSupport = new Waypoint({
     element: document.getElementById("wesprzyj"),
     handler: function(direction) {
       if(direction == "up") {
-        clearMenuHighLighting()
+        highlightMenu(prawdyimityMenuElement)
       } else {
         highlightMenu(wesprzyjMenuElement)
       }
@@ -69,24 +80,13 @@ var body, navToggled, toggleNav, trigger;
         highlightMenu(tudostanieszwodezkranuMenuElement)
       }
     },
-    offset: 10
-  })
-  var truthsAndMyths = new Waypoint({
-    element: document.getElementById("prawdyimity"),
-    handler: function(direction) {
-      if(direction == "up") {
-        highlightMenu(tudostanieszwodezkranuMenuElement)
-      } else {
-        highlightMenu(prawdyimityMenuElement)
-      }
-    },
-    offset: 150
+    offset: 50
   })
   var partners = new Waypoint({
     element: document.getElementById("partnerzy"),
     handler: function(direction) {
       if(direction == "up") {
-        highlightMenu(prawdyimityMenuElement)
+        highlightMenu(tudostanieszwodezkranuMenuElement)
       } else {
         highlightMenu(partnerzyMenuElement)
       }

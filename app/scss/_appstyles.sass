@@ -434,9 +434,42 @@ button.animated-hover
       bottom: 0
       right: 0
 
+.pomagam
+  position: relative
+
+  .loading
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    position: absolute
+    margin: 230px auto 0
+    font-size: rem-calc(20px)
+    color: $secondary-color
+
+  @media #{$small-only}
+
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      z-index: 4
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+
 iframe
   background: none
 
+.app
+  margin-top: rem-calc(80px);
+  
+  .app-screens
+    margin-top: rem-calc(20px);
+
+  .app-screen
+    height: rem-calc(400px);
 
 // How to support
 .how-to-help
@@ -641,7 +674,7 @@ blockquote.quote.big-quote
     // THIS IS IMPORTANT HERE OTHERWAY IT BREAKS
 
   .button.with-icon--vertical
-    margin-top: 130px
+    margin-top: 40px
 
   blockquote.quote:before
     content: "“"
